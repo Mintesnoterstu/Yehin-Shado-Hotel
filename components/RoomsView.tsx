@@ -11,15 +11,13 @@ import { Button } from "@/components/ui/button";
 import { gallery } from "@/data/gallery";
 import { useLanguage } from "@/components/LanguageProvider";
 
-const amenityIcons = [Wifi, Bath, Volume2, ConciergeBell] as const;
-
 export function RoomsView() {
   const { t } = useLanguage();
-  const amenityLabels = [
-    t.rooms.amenities.wifi,
-    t.rooms.amenities.bath,
-    t.rooms.amenities.quiet,
-    t.rooms.amenities.service,
+  const amenities = [
+    { label: t.rooms.amenities.wifi, Icon: Wifi },
+    { label: t.rooms.amenities.bath, Icon: Bath },
+    { label: t.rooms.amenities.quiet, Icon: Volume2 },
+    { label: t.rooms.amenities.service, Icon: ConciergeBell },
   ];
 
   const types = [
@@ -65,18 +63,15 @@ export function RoomsView() {
               ))}
             </FadeIn>
             <div className="mt-8 flex flex-wrap gap-2">
-              {amenityLabels.map((amenity, index) => {
-                const Icon = amenityIcons[index];
-                return (
-                  <span
-                    key={amenity}
-                    className="inline-flex items-center gap-2 rounded-full bg-forest-light px-3 py-1.5 text-sm text-forest-fg"
-                  >
-                    <Icon className="h-4 w-4" aria-hidden />
-                    {amenity}
-                  </span>
-                );
-              })}
+              {amenities.map(({ label, Icon }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-full bg-forest-light px-3 py-1.5 text-sm text-forest-fg"
+                >
+                  <Icon className="h-4 w-4" aria-hidden />
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
         </section>
