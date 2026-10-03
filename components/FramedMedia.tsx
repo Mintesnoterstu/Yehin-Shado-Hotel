@@ -23,7 +23,7 @@ export function FramedImage({ src, alt, priority, sizes, className }: FramedImag
         fill
         priority={priority}
         sizes={sizes ?? "(max-width: 768px) 100vw, 50vw"}
-        className="object-contain"
+        className="object-cover object-center"
       />
     </figure>
   );

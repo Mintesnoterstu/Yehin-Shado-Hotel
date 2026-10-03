@@ -13,6 +13,7 @@ const config: Config = {
         forest: {
           DEFAULT: "var(--color-forest)",
           dark: "var(--color-forest-dark)",
+          soft: "var(--color-forest-soft)",
           light: "var(--color-forest-light)",
           fg: "var(--color-forest-fg)",
         },

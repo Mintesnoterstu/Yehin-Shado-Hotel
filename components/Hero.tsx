@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
 import { site } from "@/data/site";
@@ -15,18 +16,44 @@ export function Hero() {
   const { theme } = useTheme();
   const day = theme === "light";
   const night = theme === "dark";
+  const heroImage = gallery.hero[3] ?? gallery.hero[0];
 
   return (
     <section
       className={cn(
-        "relative overflow-hidden",
-        day ? "bg-canvas" : night ? "bg-forest-dark" : "bg-forest",
+        "surface-dark relative overflow-hidden",
+        day ? "bg-canvas" : night ? "bg-forest-dark" : "bg-forest-soft",
       )}
     >
+      {heroImage ? (
+        <Image
+          src={heroImage.src}
+          alt={heroImage.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      ) : null}
+      <div
+        className={cn(
+          "absolute inset-0",
+          day
+            ? "bg-gradient-to-r from-canvas/90 via-canvas/70 to-canvas/40"
+            : night
+              ? "bg-gradient-to-r from-forest-dark/90 via-forest-dark/75 to-forest-dark/50"
+              : "bg-gradient-to-r from-forest-soft/88 via-forest-soft/70 to-forest-soft/45",
+        )}
+      />
+
       <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl items-center gap-10 px-5 pb-16 pt-28 lg:grid-cols-2 lg:px-8 lg:pb-20">
         <div>
-          <h1 className={cn("max-w-3xl drop-shadow-sm", day ? "text-forest-fg" : "text-ivory")}>{t.tagline}</h1>
-          <p className={cn("mt-5 max-w-xl text-lg", day ? "text-moss" : "text-ivory/90")}>{t.description}</p>
+          <h1 className={cn("max-w-3xl drop-shadow-sm", day ? "text-forest-fg" : "text-ivory")}>
+            {t.tagline}
+          </h1>
+          <p className={cn("mt-5 max-w-xl text-lg", day ? "text-moss" : "text-ivory/90")}>
+            {t.description}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild>
               <Link href="/contact?tab=booking">{t.actions.bookRoom}</Link>

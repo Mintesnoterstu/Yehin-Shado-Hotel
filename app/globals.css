@@ -34,6 +34,7 @@
     --color-sage: #dce4de;
     --color-forest: #1f3b2c;
     --color-forest-dark: #172e22;
+    --color-forest-soft: #2c4a3a;
     --color-forest-light: #e8efe9;
     --color-forest-fg: #1f3b2c;
     --color-sand: #c9a57a;
@@ -56,6 +57,7 @@
     --color-sage: #dde8e1;
     --color-forest: #1a4a32;
     --color-forest-dark: #143826;
+    --color-forest-soft: #3a5e4a;
     --color-forest-light: #eef5f1;
     --color-forest-fg: #143826;
     --color-sand: #c9974f;
@@ -87,6 +89,7 @@
     --color-sage: #2a3830;
     --color-forest: #1f3b2c;
     --color-forest-dark: #0e1612;
+    --color-forest-soft: #1a3328;
     --color-forest-light: #18241e;
     --color-forest-fg: #c5ddcc;
     --color-sand: #d4b184;
@@ -116,6 +119,18 @@
   h3,
   h4 {
     @apply font-serif tracking-[-0.02em] text-ink;
+  }
+
+  .surface-dark h1,
+  .surface-dark h2,
+  .surface-dark h3,
+  .surface-dark h4 {
+    color: #faf8f3;
+  }
+
+  .surface-dark p,
+  .surface-dark address {
+    color: rgba(250, 248, 243, 0.88);
   }
 
   html.locale-am h1,

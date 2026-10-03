@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
+import { gallery } from "@/data/gallery";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -43,20 +45,28 @@ export function Header() {
         light
           ? "border-sage bg-canvas text-forest-fg"
           : night
-            ? "border-white/10 bg-forest-dark text-ivory"
-            : "border-white/10 bg-forest text-ivory",
+            ? "surface-dark border-white/10 bg-forest-dark text-ivory"
+            : "surface-dark border-white/10 bg-forest text-ivory",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 lg:h-[4.25rem] lg:px-8">
         <Link
           href="/"
           className={cn(
-            "min-w-0 shrink-0 font-serif text-lg tracking-[-0.02em] sm:text-xl",
+            "flex min-w-0 shrink-0 items-center gap-2.5 font-serif text-lg tracking-[-0.02em] sm:text-xl",
             light ? "text-forest-fg" : "text-ivory",
           )}
           onClick={() => setOpen(false)}
         >
-          {t.name}
+          <Image
+            src={gallery.brand.logo.src}
+            alt={gallery.brand.logo.alt}
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 rounded-full object-cover"
+            priority
+          />
+          <span className="truncate">{t.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-5 xl:gap-8 lg:flex" aria-label="Primary">
