@@ -49,7 +49,7 @@ export function Footer() {
 
         <div>
           <p className="mb-4 text-xs uppercase tracking-[0.2em] text-sand">{t.footer.contact}</p>
-          <address className="not-italic text-sm leading-relaxed">{site.address.line}</address>
+            <address className="not-italic text-sm leading-relaxed">{t.location.addressLine}</address>
           <a href={`tel:${site.phoneE164}`} className="mt-3 block text-sm hover:text-sand">
             {site.phoneDisplay}
           </a>

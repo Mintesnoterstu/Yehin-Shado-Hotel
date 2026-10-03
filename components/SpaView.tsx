@@ -62,8 +62,8 @@ export function SpaView() {
               </article>
             ))}
           </div>
-          <FadeIn className="mt-8 mx-auto max-w-md">
-            <FramedVideo video={gallery.videos.sauna} className="h-[32rem]" />
+          <FadeIn className="mt-8">
+            <FramedVideo video={gallery.videos.sauna} title={t.videos.sauna} />
           </FadeIn>
         </div>
       </section>

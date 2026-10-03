@@ -7,7 +7,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export function ContactTabs() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const searchParams = useSearchParams();
   const router = useRouter();
   const tab = searchParams.get("tab") === "booking" ? "booking" : "inquiry";
@@ -25,10 +25,10 @@ export function ContactTabs() {
         <TabsTrigger value="booking">{t.contact.booking}</TabsTrigger>
       </TabsList>
       <TabsContent value="inquiry">
-        <ContactForm />
+        <ContactForm key={locale} />
       </TabsContent>
       <TabsContent value="booking">
-        <BookingForm />
+        <BookingForm key={locale} />
       </TabsContent>
     </Tabs>
   );

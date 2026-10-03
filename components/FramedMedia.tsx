@@ -15,7 +15,7 @@ type FramedImageProps = {
 
 export function FramedImage({ src, alt, priority, sizes, className }: FramedImageProps) {
   return (
-    <figure className={cn("relative overflow-hidden rounded-2xl bg-forest-dark", className)}>
+    <figure className={cn("relative aspect-[4/3] overflow-hidden rounded-2xl bg-sage", className)}>
       <Image
         src={src}
         alt={alt}
@@ -30,26 +30,30 @@ export function FramedImage({ src, alt, priority, sizes, className }: FramedImag
 
 type FramedVideoProps = {
   video: GalleryVideo;
+  title?: string;
   className?: string;
 };
 
-export function FramedVideo({ video, className }: FramedVideoProps) {
+export function FramedVideo({ video, title, className }: FramedVideoProps) {
   const reduce = useReducedMotion();
+  const label = title ?? video.title;
 
   return (
-    <div className={cn("relative flex items-center justify-center overflow-hidden rounded-2xl bg-forest-dark p-3 sm:p-4", className)}>
-      <video
-        className="h-full aspect-[9/16] rounded-xl object-cover shadow-lg"
-        poster={video.poster}
-        autoPlay={!reduce}
-        muted
-        loop
-        playsInline
-        controls
-        aria-label={video.title}
-      >
-        <source src={video.src} type="video/mp4" />
-      </video>
+    <div className={cn("mx-auto w-full max-w-[18rem]", className)}>
+      <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-forest-dark ring-1 ring-white/10">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          poster={video.poster}
+          autoPlay={!reduce}
+          muted
+          loop
+          playsInline
+          controls
+          aria-label={label}
+        >
+          <source src={video.src} type="video/mp4" />
+        </video>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Leaf, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/LanguageProvider";
 import { useTheme } from "@/components/ThemeProvider";
@@ -13,12 +14,11 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
   const { locale, setLocale, t } = useLanguage();
   const { theme, setTheme } = useTheme();
 
-  const themes: ThemeName[] = ["default", "light", "dark"];
-  const themeLabel: Record<ThemeName, string> = {
-    default: t.header.default,
-    light: t.header.light,
-    dark: t.header.dark,
-  };
+  const themes: { name: ThemeName; label: string; icon: typeof Sun }[] = [
+    { name: "default", label: t.header.default, icon: Leaf },
+    { name: "light", label: t.header.light, icon: Sun },
+    { name: "dark", label: t.header.dark, icon: Moon },
+  ];
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -51,6 +51,10 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
           {t.header.amharic}
         </button>
       </div>
+      <span
+        className={cn("hidden h-5 w-px sm:block", inverted ? "bg-ivory/25" : "bg-sage")}
+        aria-hidden
+      />
       <div
         className={cn(
           "flex rounded-full border p-0.5 text-xs",
@@ -59,17 +63,18 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
         role="group"
         aria-label={t.header.theme}
       >
-        {themes.map((name) => (
+        {themes.map(({ name, label, icon: Icon }) => (
           <button
             type="button"
             key={name}
             className={cn(
-              "rounded-full px-2.5 py-1",
+              "inline-flex items-center gap-1 rounded-full px-2.5 py-1",
               theme === name ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
             )}
             onClick={() => setTheme(name)}
           >
-            {themeLabel[name]}
+            <Icon className="h-3.5 w-3.5" aria-hidden />
+            {label}
           </button>
         ))}
       </div>

@@ -10,15 +10,17 @@ import { gallery } from "@/data/gallery";
 import { Button } from "@/components/ui/button";
 import { PrefsControls } from "@/components/PrefsControls";
 import { useLanguage } from "@/components/LanguageProvider";
+import { useTheme } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const solid = scrolled || open;
-  const inverted = !solid;
+  const inverted = !solid && theme !== "light";
 
   const nav = [
     { href: "/", label: t.nav.home },
@@ -50,13 +52,13 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 lg:h-[4.25rem] lg:px-8">
-        <Link href="/" className="flex min-w-0 items-center gap-2.5" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex min-w-0 shrink-0 items-center gap-2.5" onClick={() => setOpen(false)}>
           <Image
             src={gallery.brand.logo.src}
             alt={gallery.brand.logo.alt}
-            width={36}
-            height={36}
-            className="rounded-full"
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 rounded-full ring-1 ring-ivory/30"
             priority
           />
           <span

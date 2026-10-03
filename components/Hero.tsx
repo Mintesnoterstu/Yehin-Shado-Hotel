@@ -7,32 +7,41 @@ import { gallery } from "@/data/gallery";
 import { Button } from "@/components/ui/button";
 import { FramedVideo } from "@/components/FramedMedia";
 import { useLanguage } from "@/components/LanguageProvider";
+import { useTheme } from "@/components/ThemeProvider";
+import { cn } from "@/lib/utils";
 
 export function Hero() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
+  const day = theme === "light";
 
   return (
-    <section className="relative overflow-hidden bg-forest-dark">
+    <section className={cn("relative overflow-hidden", day ? "bg-canvas" : "bg-forest-dark")}>
       <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl items-center gap-10 px-5 pb-16 pt-28 lg:grid-cols-2 lg:px-8 lg:pb-20">
         <div>
-          <h1 className="max-w-3xl text-ivory drop-shadow-sm">{t.tagline}</h1>
-          <p className="mt-5 max-w-xl text-lg text-ivory/90">{t.description}</p>
+          <h1 className={cn("max-w-3xl drop-shadow-sm", day ? "text-forest-fg" : "text-ivory")}>{t.tagline}</h1>
+          <p className={cn("mt-5 max-w-xl text-lg", day ? "text-moss" : "text-ivory/90")}>{t.description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild>
               <Link href="/contact?tab=booking">{t.actions.bookRoom}</Link>
             </Button>
-            <Button asChild variant="secondary">
+            <Button asChild variant={day ? "outline" : "secondary"}>
               <Link href="/spa">{t.actions.exploreSpa}</Link>
             </Button>
           </div>
-          <div className="mt-10 inline-flex w-fit items-center gap-2 rounded-full border border-sand/40 bg-forest/40 px-4 py-2 text-sm text-sand backdrop-blur-sm">
+          <div
+            className={cn(
+              "mt-10 inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm backdrop-blur-sm",
+              day ? "border-sage bg-surface text-forest-fg" : "border-sand/40 bg-forest/40 text-sand",
+            )}
+          >
             <Star className="h-4 w-4 fill-sand text-sand" aria-hidden />
             <span>
               {site.rating} · {t.home.guestRated}
             </span>
           </div>
         </div>
-        <FramedVideo video={gallery.videos.hero} className="mx-auto h-[min(70vh,36rem)] w-full max-w-sm" />
+        <FramedVideo video={gallery.videos.hero} title={t.videos.hero} />
       </div>
     </section>
   );

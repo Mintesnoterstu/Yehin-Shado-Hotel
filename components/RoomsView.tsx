@@ -28,14 +28,17 @@ export function RoomsView() {
       title: t.rooms.standardTitle,
       description: t.rooms.standardDescription,
       images: gallery.rooms.standard,
-      videos: [gallery.videos.room],
+      videos: [{ video: gallery.videos.room, title: t.videos.room }],
     },
     {
       slug: "double",
       title: t.rooms.doubleTitle,
       description: t.rooms.doubleDescription,
       images: gallery.rooms.double,
-      videos: [gallery.videos.doubleRoom, gallery.videos.doubleRoomAlt],
+      videos: [
+        { video: gallery.videos.doubleRoom, title: t.videos.doubleRoom },
+        { video: gallery.videos.doubleRoomAlt, title: t.videos.doubleRoomAlt },
+      ],
     },
   ];
 
@@ -56,9 +59,9 @@ export function RoomsView() {
             <FadeIn className="mt-8">
               <ImageGallery images={room.images} fallbackLabel={room.title} />
             </FadeIn>
-            <FadeIn className="mt-6 grid gap-4 sm:grid-cols-2">
-              {room.videos.map((video) => (
-                <FramedVideo key={video.src} video={video} className="h-[32rem]" />
+            <FadeIn className="mt-6 grid justify-items-center gap-4 sm:grid-cols-2">
+              {room.videos.map((item) => (
+                <FramedVideo key={item.video.src} video={item.video} title={item.title} />
               ))}
             </FadeIn>
             <div className="mt-8 flex flex-wrap gap-2">

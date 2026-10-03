@@ -20,7 +20,7 @@ export function AboutSnippet() {
         </FadeIn>
         <FadeIn delay={0.1}>
           {image ? (
-            <FramedImage src={image.src} alt={image.alt} className="h-[22rem] border border-sage sm:h-[26rem]" />
+            <FramedImage src={image.src} alt={image.alt} className="border border-sage" />
           ) : null}
         </FadeIn>
       </div>

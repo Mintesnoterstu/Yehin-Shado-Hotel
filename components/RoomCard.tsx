@@ -21,7 +21,7 @@ export function RoomCard({ title, description, href, image }: RoomCardProps) {
   return (
     <article className="group overflow-hidden rounded-2xl border border-sage bg-surface shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md">
       {image ? (
-        <FramedImage src={image.src} alt={image.alt} className="h-56 rounded-none sm:h-64" />
+        <FramedImage src={image.src} alt={image.alt} className="rounded-none" />
       ) : null}
       <div className="space-y-3 p-6">
         <h3 className="text-ink">{title}</h3>

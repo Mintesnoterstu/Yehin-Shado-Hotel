@@ -67,6 +67,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
+      data-theme="default"
       className={`${cormorant.variable} ${inter.variable} ${notoEthiopic.variable}`}
       suppressHydrationWarning
     >

@@ -17,7 +17,7 @@ export function LocationStrip() {
           <p className="text-xs uppercase tracking-[0.2em] text-sand">{t.location.neighborhood}</p>
           <h2 className="mt-3 text-ivory">{t.home.locationTitle}</h2>
           <p className="mt-4 text-ivory/85">{t.location.neighborhoodNote}</p>
-          <address className="mt-6 not-italic text-ivory/80">{site.address.line}</address>
+          <address className="mt-6 not-italic text-ivory/80">{t.location.addressLine}</address>
           <a href={`tel:${site.phoneE164}`} className="mt-3 inline-block text-sand">
             {site.phoneDisplay}
           </a>

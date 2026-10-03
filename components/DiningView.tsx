@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { FramedImage, FramedVideo } from "@/components/FramedMedia";
+import { FramedVideo } from "@/components/FramedMedia";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -24,8 +24,8 @@ export function DiningView() {
               description={t.dining.restaurantDescription}
             />
           </FadeIn>
-          <FadeIn className="mt-10 mx-auto max-w-md">
-            <FramedVideo video={gallery.videos.dining} className="h-[32rem]" />
+          <FadeIn className="mt-10">
+            <FramedVideo video={gallery.videos.dining} title={t.videos.dining} />
           </FadeIn>
           <div className="mt-10">
             <Button asChild>
@@ -44,16 +44,6 @@ export function DiningView() {
               title={t.dining.barTitle}
               description={t.dining.barDescription}
             />
-          </FadeIn>
-          <FadeIn className="mt-10 grid gap-4 sm:grid-cols-2">
-            {gallery.spa.moroccan.slice(0, 2).map((image) => (
-              <FramedImage
-                key={image.src}
-                src={image.src}
-                alt={image.alt}
-                className="h-[22rem] border border-white/10 sm:h-[26rem]"
-              />
-            ))}
           </FadeIn>
           <div className="mt-10">
             <Button asChild variant="secondary">

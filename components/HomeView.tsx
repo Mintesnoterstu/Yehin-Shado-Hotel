@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
+import { AboutSnippet } from "@/components/AboutSnippet";
 import { RoomCard, RoomCardGrid } from "@/components/RoomCard";
 import { SpaCard, SpaCardGrid } from "@/components/SpaCard";
 import { DiningPreview } from "@/components/DiningPreview";

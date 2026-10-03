@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2 } from "lucide-react";
 import {
-  bookingContactSchema,
-  bookingSpaSchema,
-  bookingStaySchema,
+  createBookingContactSchema,
+  createBookingSpaSchema,
+  createBookingStaySchema,
   type BookingContactInput,
   type BookingSpaInput,
   type BookingStayInput,
@@ -119,7 +119,7 @@ function StayStep({
     watch,
     formState: { errors },
   } = useForm<BookingStayInput>({
-    resolver: zodResolver(bookingStaySchema),
+    resolver: zodResolver(createBookingStaySchema(t.form.errors)),
     defaultValues: defaultValues ?? { guests: 1, roomType: "standard" },
   });
 
@@ -172,7 +172,7 @@ function SpaStep({
     watch,
     formState: { errors },
   } = useForm<BookingSpaInput>({
-    resolver: zodResolver(bookingSpaSchema),
+    resolver: zodResolver(createBookingSpaSchema(t.form.errors)),
     defaultValues: defaultValues ?? {
       moroccanBath: false,
       massage: false,
@@ -252,7 +252,7 @@ function ContactStep({
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<BookingContactInput>({
-    resolver: zodResolver(bookingContactSchema),
+    resolver: zodResolver(createBookingContactSchema(t.form.errors)),
   });
 
   async function onSubmit(values: BookingContactInput) {

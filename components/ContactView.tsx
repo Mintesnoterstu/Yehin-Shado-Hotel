@@ -32,7 +32,7 @@ export function ContactView() {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-sand">{t.contact.findUs}</p>
             <h2 className="mt-3 text-forest-fg">{t.location.neighborhood}</h2>
-            <address className="mt-4 not-italic text-moss">{site.address.line}</address>
+            <address className="mt-4 not-italic text-moss">{t.location.addressLine}</address>
             <a href={`tel:${site.phoneE164}`} className="mt-4 block text-forest-fg">
               {site.phoneDisplay}
             </a>

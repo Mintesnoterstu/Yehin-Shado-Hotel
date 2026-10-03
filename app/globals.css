@@ -44,22 +44,22 @@
 
   [data-theme="light"] {
     --background: 0 0% 100%;
-    --foreground: 148 20% 12%;
+    --foreground: 148 28% 10%;
     --card: 0 0% 100%;
-    --muted: 140 20% 96%;
+    --muted: 140 18% 97%;
     --color-canvas: #ffffff;
-    --color-surface: #f7faf8;
+    --color-surface: #f4f7f5;
     --color-ivory: #ffffff;
-    --color-ink: #1a2a22;
-    --color-moss: #3d4d45;
-    --color-fog: #6e7e74;
-    --color-sage: #e6eee8;
-    --color-forest: #24523a;
-    --color-forest-dark: #1b3d2b;
-    --color-forest-light: #f3f7f4;
-    --color-forest-fg: #1b3d2b;
-    --color-sand: #d4b184;
-    --color-sand-light: #f6edd9;
+    --color-ink: #122018;
+    --color-moss: #33443c;
+    --color-fog: #5f7168;
+    --color-sage: #dde8e1;
+    --color-forest: #1a4a32;
+    --color-forest-dark: #143826;
+    --color-forest-light: #eef5f1;
+    --color-forest-fg: #143826;
+    --color-sand: #c9974f;
+    --color-sand-light: #f8efdc;
   }
 
   [data-theme="dark"] {
@@ -104,6 +104,7 @@
 
   body {
     @apply bg-canvas text-ink font-sans antialiased;
+    transition: background-color 200ms ease, color 200ms ease;
   }
 
   html.locale-am body {

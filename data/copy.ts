@@ -27,6 +27,7 @@ export const copy = {
       whatsappAria: "Message Yehin Shado Hotel on WhatsApp",
       openMenu: "Open menu",
       closeMenu: "Close menu",
+      close: "Close",
     },
     header: {
       language: "Language",
@@ -66,6 +67,8 @@ export const copy = {
       neighborhoodNote:
         "In the heart of Jemo 1 — next to Saba Building, inside Sisters Cafe Building. A quiet corner of Addis Ababa, minutes from Bole International Airport.",
       airportNote: "Minutes from Bole International Airport.",
+      addressLine:
+        "Jemo 1, next to Saba Building, inside Sisters Cafe Building, Addis Ababa 1000, Ethiopia",
       hoursNote: "[PLACEHOLDER — replace with confirmed hours]",
       receptionHours: "Open 24 hours",
       spaHours: "Daily, 9:00 – 21:00",
@@ -181,6 +184,25 @@ export const copy = {
       bookingFail: "We could not send this inquiry. Please call or message us on WhatsApp.",
       steps: "Booking steps",
       current: "current",
+      errors: {
+        name: "Please share your name.",
+        email: "A valid email is required.",
+        phone: "Please include a phone number.",
+        subject: "Please add a subject.",
+        message: "A little more detail helps us respond well.",
+        checkIn: "Check-in date is required.",
+        checkOut: "Check-out date is required.",
+        checkOutAfter: "Check-out must be after check-in.",
+        massageType: "Please choose a massage type.",
+      },
+    },
+    videos: {
+      hero: "Quiet interiors — comfort, taste, and relaxation",
+      room: "A walk through a guest bedroom",
+      doubleRoom: "Elegant double bedroom",
+      doubleRoomAlt: "Second view of the double bedroom",
+      sauna: "Guest enjoying the sauna",
+      dining: "A celebration hosted at Yehin Shado Hotel",
     },
     footer: {
       visit: "Visit",
@@ -260,6 +282,7 @@ export const copy = {
       whatsappAria: "የሂን ሻዶ ሆቴልን በዋትስአፕ ያግኙ",
       openMenu: "ምናሌ ክፈት",
       closeMenu: "ምናሌ ዝጋ",
+      close: "ዝጋ",
     },
     header: {
       language: "ቋንቋ",
@@ -299,6 +322,8 @@ export const copy = {
       neighborhoodNote:
         "በጀሞ 1 ማዕከል — ከሳባ ሕንፃ አጠገብ፣ በሲስተርስ ካፌ ሕንፃ ውስጥ። የአዲስ አበባ ጸጥ ያለ ማዕዘን፣ ከቦሌ ዓለም አቀፍ አውሮፕላን ማረፊያ በደቂቃዎች።",
       airportNote: "ከቦሌ ዓለም አቀፍ አውሮፕላን ማረፊያ በደቂቃዎች።",
+      addressLine:
+        "ጀሞ 1፣ ከሳባ ሕንፃ አጠገብ፣ በሲስተርስ ካፌ ሕንፃ ውስጥ፣ አዲስ አበባ 1000፣ ኢትዮጵያ",
       hoursNote: "[PLACEHOLDER — በተረጋገጡ ሰዓቶች ይተካ]",
       receptionHours: "ሁልጊዜ ክፍት",
       spaHours: "በየቀኑ፣ 9:00 – 21:00",
@@ -409,6 +434,25 @@ export const copy = {
       bookingFail: "ጥያቄውን መላክ አልተቻለም። እባክዎ ይደውሉ ወይም በዋትስአፕ ይጻፉ።",
       steps: "የቦታ ማስያዝ ደረጃዎች",
       current: "አሁን",
+      errors: {
+        name: "እባክዎ ስምዎን ይጻፉ።",
+        email: "ትክክለኛ ኢሜይል ያስፈልጋል።",
+        phone: "እባክዎ ስልክ ቁጥር ያስገቡ።",
+        subject: "እባክዎ ርዕስ ያክሉ።",
+        message: "ትንሽ ተጨማሪ ዝርዝር እንድንመልስ ይረዳናል።",
+        checkIn: "የመግቢያ ቀን ያስፈልጋል።",
+        checkOut: "የመውጫ ቀን ያስፈልጋል።",
+        checkOutAfter: "መውጫ ከመግቢያ በኋላ መሆን አለበት።",
+        massageType: "እባክዎ የማሳጅ አይነት ይምረጡ።",
+      },
+    },
+    videos: {
+      hero: "ጸጥ ያሉ ውስጦች — ምቾት፣ ጣዕም እና እረፍት",
+      room: "የእንግዳ መኝታ ክፍል ጉብኝት",
+      doubleRoom: "ውብ ድርብ መኝታ ክፍል",
+      doubleRoomAlt: "የድርብ መኝታ ክፍል ሁለተኛ እይታ",
+      sauna: "እንግዳ በሳውና ላይ",
+      dining: "በየሂን ሻዶ ሆቴል የተደረገ በዓል",
     },
     footer: {
       visit: "ጎብኙ",
