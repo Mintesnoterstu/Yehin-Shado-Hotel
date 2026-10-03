@@ -2,15 +2,18 @@
 
 import { MessageCircle } from "lucide-react";
 import { getWhatsAppLink } from "@/lib/utils";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export function WhatsAppButton() {
+  const { t } = useLanguage();
+
   return (
     <a
       href={getWhatsAppLink()}
       target="_blank"
       rel="noreferrer"
       className="fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-forest text-ivory shadow-lg hover:bg-forest-dark"
-      aria-label="Message Yehin Shado Hotel on WhatsApp"
+      aria-label={t.actions.whatsappAria}
     >
       <MessageCircle className="h-5 w-5" />
     </a>

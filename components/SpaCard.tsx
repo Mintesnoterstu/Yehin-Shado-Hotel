@@ -22,8 +22,8 @@ export function SpaCard({ title, description, icon }: SpaCardProps) {
   const Icon = icons[icon] ?? Bath;
 
   return (
-    <article className="rounded-2xl border border-sage bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-forest hover:shadow-md">
-      <Icon className="h-6 w-6 text-forest" aria-hidden />
+    <article className="rounded-2xl border border-sage bg-surface p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-forest hover:shadow-md">
+      <Icon className="h-6 w-6 text-forest-fg" aria-hidden />
       <h3 className="mt-4 text-ink">{title}</h3>
       <p className="mt-2 text-sm text-moss">{description}</p>
     </article>

@@ -12,10 +12,10 @@ const buttonVariants = cva(
         secondary:
           "bg-transparent text-ivory border border-ivory/70 hover:bg-ivory/10",
         outline:
-          "border border-forest text-forest bg-transparent hover:bg-forest-light",
-        ghost: "text-moss hover:text-forest hover:bg-forest-light",
+          "border border-forest-fg text-forest-fg bg-transparent hover:bg-forest-light",
+        ghost: "text-moss hover:text-forest-fg hover:bg-forest-light",
         sand: "bg-sand text-ink hover:bg-sand-light",
-        link: "text-forest underline-offset-4 hover:underline rounded-none",
+        link: "text-forest-fg underline-offset-4 hover:underline rounded-none",
       },
       size: {
         default: "h-11 px-6",

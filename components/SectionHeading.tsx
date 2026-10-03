@@ -29,7 +29,7 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={invert ? "text-ivory" : "text-forest"}>{title}</h2>
+      <h2 className={invert ? "text-ivory" : "text-forest-fg"}>{title}</h2>
       {description ? (
         <p className={cn("mt-4 max-w-2xl", invert ? "text-ivory/80" : "text-moss", align === "center" && "mx-auto")}>
           {description}

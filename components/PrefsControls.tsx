@@ -34,7 +34,7 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
           type="button"
           className={cn(
             "rounded-full px-2.5 py-1",
-            locale === "en" ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss",
+            locale === "en" ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
           )}
           onClick={() => setLocale("en")}
         >
@@ -44,7 +44,7 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
           type="button"
           className={cn(
             "rounded-full px-2.5 py-1",
-            locale === "am" ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss",
+            locale === "am" ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
           )}
           onClick={() => setLocale("am")}
         >
@@ -65,7 +65,7 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
             key={name}
             className={cn(
               "rounded-full px-2.5 py-1",
-              theme === name ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss",
+              theme === name ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
             )}
             onClick={() => setTheme(name)}
           >

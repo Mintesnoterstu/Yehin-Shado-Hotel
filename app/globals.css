@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  [data-theme="default"] {
     --background: 40 41% 97%;
     --foreground: 148 25% 10%;
     --card: 0 0% 100%;
@@ -24,6 +25,73 @@
     --input: 135 13% 88%;
     --ring: 147 31% 18%;
     --radius: 0.75rem;
+    --color-canvas: #faf8f3;
+    --color-surface: #ffffff;
+    --color-ivory: #faf8f3;
+    --color-ink: #14211a;
+    --color-moss: #4a5a50;
+    --color-fog: #7a8a80;
+    --color-sage: #dce4de;
+    --color-forest: #1f3b2c;
+    --color-forest-dark: #172e22;
+    --color-forest-light: #e8efe9;
+    --color-forest-fg: #1f3b2c;
+    --color-sand: #c9a57a;
+    --color-sand-light: #efe2ce;
+    --color-olive: #3f6b4a;
+    --color-clay: #a94438;
+  }
+
+  [data-theme="light"] {
+    --background: 0 0% 100%;
+    --foreground: 148 20% 12%;
+    --card: 0 0% 100%;
+    --muted: 140 20% 96%;
+    --color-canvas: #ffffff;
+    --color-surface: #f7faf8;
+    --color-ivory: #ffffff;
+    --color-ink: #1a2a22;
+    --color-moss: #3d4d45;
+    --color-fog: #6e7e74;
+    --color-sage: #e6eee8;
+    --color-forest: #24523a;
+    --color-forest-dark: #1b3d2b;
+    --color-forest-light: #f3f7f4;
+    --color-forest-fg: #1b3d2b;
+    --color-sand: #d4b184;
+    --color-sand-light: #f6edd9;
+  }
+
+  [data-theme="dark"] {
+    --background: 150 18% 8%;
+    --foreground: 40 30% 94%;
+    --card: 150 14% 12%;
+    --card-foreground: 40 30% 94%;
+    --popover: 150 14% 12%;
+    --popover-foreground: 40 30% 94%;
+    --primary: 147 22% 28%;
+    --primary-foreground: 40 30% 94%;
+    --secondary: 150 12% 16%;
+    --secondary-foreground: 40 30% 94%;
+    --muted: 150 12% 16%;
+    --muted-foreground: 140 10% 70%;
+    --border: 150 10% 22%;
+    --input: 150 10% 22%;
+    --ring: 33 43% 63%;
+    --color-canvas: #101612;
+    --color-surface: #18211c;
+    --color-ivory: #f4efe6;
+    --color-ink: #f0ebe3;
+    --color-moss: #b7c3bb;
+    --color-fog: #8a9890;
+    --color-sage: #2a3830;
+    --color-forest: #1f3b2c;
+    --color-forest-dark: #0e1612;
+    --color-forest-light: #18241e;
+    --color-forest-fg: #c5ddcc;
+    --color-sand: #d4b184;
+    --color-sand-light: #3a3226;
+    --color-olive: #8fbf9a;
   }
 
   * {
@@ -35,7 +103,11 @@
   }
 
   body {
-    @apply bg-ivory text-ink font-sans antialiased;
+    @apply bg-canvas text-ink font-sans antialiased;
+  }
+
+  html.locale-am body {
+    font-family: var(--font-ethiopic), var(--font-inter), sans-serif;
   }
 
   h1,
@@ -43,6 +115,13 @@
   h3,
   h4 {
     @apply font-serif tracking-[-0.02em] text-ink;
+  }
+
+  html.locale-am h1,
+  html.locale-am h2,
+  html.locale-am h3,
+  html.locale-am h4 {
+    font-family: var(--font-ethiopic), var(--font-cormorant), serif;
   }
 
   h1 {
@@ -65,13 +144,17 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-forest ring-offset-2 ring-offset-ivory;
+    @apply outline-none ring-2 ring-forest ring-offset-2 ring-offset-canvas;
   }
 }
 
 @layer utilities {
   .map-muted {
     filter: grayscale(0.35) saturate(0.7) hue-rotate(70deg) contrast(0.95);
+  }
+
+  [data-theme="dark"] .map-muted {
+    filter: grayscale(0.45) saturate(0.55) brightness(0.85) contrast(1.05);
   }
 }
 

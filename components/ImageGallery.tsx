@@ -28,7 +28,7 @@ export function ImageGallery({ images, fallbackLabel, className }: ImageGalleryP
           key={image.src}
           src={image.src}
           alt={image.alt}
-          className="h-[28rem] w-full sm:h-[32rem]"
+          className="h-56 w-full sm:h-72"
         />
       ))}
       <span className="sr-only">{fallbackLabel}</span>

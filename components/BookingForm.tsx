@@ -25,10 +25,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/components/LanguageProvider";
+import type { Copy } from "@/data/copy";
 
 type Step = 1 | 2 | 3;
 
 export function BookingForm() {
+  const { t } = useLanguage();
   const [step, setStep] = useState<Step>(1);
   const [stay, setStay] = useState<BookingStayInput | null>(null);
   const [spa, setSpa] = useState<BookingSpaInput | null>(null);
@@ -39,28 +42,23 @@ export function BookingForm() {
     return (
       <div className="rounded-2xl border border-olive/30 bg-forest-light p-8 text-olive">
         <CheckCircle2 className="h-10 w-10" />
-        <h3 className="mt-4 text-olive">Inquiry sent</h3>
-        <p className="mt-2 text-moss">
-          We have received your stay request. Our team will confirm availability by email or phone.
-        </p>
+        <h3 className="mt-4 text-olive">{t.form.inquirySent}</h3>
+        <p className="mt-2 text-moss">{t.form.bookingThanks}</p>
       </div>
     );
   }
 
   return (
     <div>
-      <ol className="mb-8 flex items-center gap-3" aria-label="Booking steps">
+      <ol className="mb-8 flex items-center gap-3" aria-label={t.form.steps}>
         {[1, 2, 3].map((value) => (
           <li
             key={value}
-            className={cn(
-              "h-2.5 w-2.5 rounded-full",
-              step >= value ? "bg-sand" : "bg-sage",
-            )}
+            className={cn("h-2.5 w-2.5 rounded-full", step >= value ? "bg-sand" : "bg-sage")}
           >
             <span className="sr-only">
-              Step {value}
-              {step === value ? ", current" : ""}
+              {value}
+              {step === value ? `, ${t.form.current}` : ""}
             </span>
           </li>
         ))}
@@ -68,6 +66,7 @@ export function BookingForm() {
 
       {step === 1 ? (
         <StayStep
+          t={t}
           defaultValues={stay ?? undefined}
           onNext={(values) => {
             setStay(values);
@@ -77,6 +76,7 @@ export function BookingForm() {
       ) : null}
       {step === 2 ? (
         <SpaStep
+          t={t}
           defaultValues={spa ?? undefined}
           onBack={() => setStep(1)}
           onNext={(values) => {
@@ -87,6 +87,7 @@ export function BookingForm() {
       ) : null}
       {step === 3 && stay && spa ? (
         <ContactStep
+          t={t}
           stay={stay}
           spa={spa}
           error={error}
@@ -103,9 +104,11 @@ export function BookingForm() {
 }
 
 function StayStep({
+  t,
   defaultValues,
   onNext,
 }: {
+  t: Copy;
   defaultValues?: BookingStayInput;
   onNext: (values: BookingStayInput) => void;
 }) {
@@ -123,40 +126,42 @@ function StayStep({
   return (
     <form onSubmit={handleSubmit(onNext)} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Check-in" error={errors.checkIn?.message}>
+        <Field label={t.form.checkIn} error={errors.checkIn?.message}>
           <Input type="date" {...register("checkIn")} />
         </Field>
-        <Field label="Check-out" error={errors.checkOut?.message}>
+        <Field label={t.form.checkOut} error={errors.checkOut?.message}>
           <Input type="date" {...register("checkOut")} />
         </Field>
       </div>
-      <Field label="Guests" error={errors.guests?.message}>
+      <Field label={t.form.guests} error={errors.guests?.message}>
         <Input type="number" min={1} max={6} {...register("guests")} />
       </Field>
-      <Field label="Room type" error={errors.roomType?.message}>
+      <Field label={t.form.roomType} error={errors.roomType?.message}>
         <Select
           value={watch("roomType")}
           onValueChange={(value: "standard" | "double") => setValue("roomType", value)}
         >
           <SelectTrigger>
-            <SelectValue placeholder="Choose a room" />
+            <SelectValue placeholder={t.form.chooseRoom} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="standard">Standard Bedroom</SelectItem>
-            <SelectItem value="double">Double Bedroom</SelectItem>
+            <SelectItem value="standard">{t.rooms.standardTitle}</SelectItem>
+            <SelectItem value="double">{t.rooms.doubleTitle}</SelectItem>
           </SelectContent>
         </Select>
       </Field>
-      <Button type="submit">Continue</Button>
+      <Button type="submit">{t.form.continue}</Button>
     </form>
   );
 }
 
 function SpaStep({
+  t,
   defaultValues,
   onNext,
   onBack,
 }: {
+  t: Copy;
   defaultValues?: BookingSpaInput;
   onNext: (values: BookingSpaInput) => void;
   onBack: () => void;
@@ -180,14 +185,14 @@ function SpaStep({
 
   return (
     <form onSubmit={handleSubmit(onNext)} className="space-y-5">
-      <p className="text-sm text-fog">Optional — add spa time to your stay inquiry.</p>
+      <p className="text-sm text-fog">{t.form.spaOptional}</p>
       <Toggle
-        label="Moroccan bath"
+        label={t.form.moroccanBath}
         checked={watch("moroccanBath")}
         onChange={(checked) => setValue("moroccanBath", checked)}
       />
       <Toggle
-        label="Massage"
+        label={t.form.massage}
         checked={massage}
         onChange={(checked) => {
           setValue("massage", checked);
@@ -195,7 +200,7 @@ function SpaStep({
         }}
       />
       {massage ? (
-        <Field label="Massage type" error={errors.massageType?.message}>
+        <Field label={t.form.massageType} error={errors.massageType?.message}>
           <Select
             value={watch("massageType")}
             onValueChange={(value: "deep-tissue" | "swedish" | "therapeutic") =>
@@ -203,29 +208,30 @@ function SpaStep({
             }
           >
             <SelectTrigger>
-              <SelectValue placeholder="Choose a massage" />
+              <SelectValue placeholder={t.form.chooseMassage} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="deep-tissue">Deep Tissue</SelectItem>
-              <SelectItem value="swedish">Swedish</SelectItem>
-              <SelectItem value="therapeutic">Targeted Therapeutic</SelectItem>
+              <SelectItem value="deep-tissue">{t.spa.massages[0].title}</SelectItem>
+              <SelectItem value="swedish">{t.spa.massages[1].title}</SelectItem>
+              <SelectItem value="therapeutic">{t.spa.massages[2].title}</SelectItem>
             </SelectContent>
           </Select>
         </Field>
       ) : null}
-      <Toggle label="Finnish sauna" checked={watch("sauna")} onChange={(checked) => setValue("sauna", checked)} />
-      <Toggle label="Steam room" checked={watch("steam")} onChange={(checked) => setValue("steam", checked)} />
+      <Toggle label={t.form.sauna} checked={watch("sauna")} onChange={(checked) => setValue("sauna", checked)} />
+      <Toggle label={t.form.steam} checked={watch("steam")} onChange={(checked) => setValue("steam", checked)} />
       <div className="flex gap-3">
         <Button type="button" variant="outline" onClick={onBack}>
-          Back
+          {t.form.back}
         </Button>
-        <Button type="submit">Continue</Button>
+        <Button type="submit">{t.form.continue}</Button>
       </div>
     </form>
   );
 }
 
 function ContactStep({
+  t,
   stay,
   spa,
   error,
@@ -233,6 +239,7 @@ function ContactStep({
   onSuccess,
   onError,
 }: {
+  t: Copy;
   stay: BookingStayInput;
   spa: BookingSpaInput;
   error: string | null;
@@ -257,37 +264,37 @@ function ContactStep({
       });
       const payload = (await response.json()) as { ok?: boolean; message?: string };
       if (!response.ok || !payload.ok) {
-        throw new Error(payload.message ?? "Unable to send booking inquiry.");
+        throw new Error(payload.message ?? t.form.bookingFail);
       }
       onSuccess();
     } catch {
-      onError("We could not send this inquiry. Please call or message us on WhatsApp.");
+      onError(t.form.bookingFail);
     }
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-      <Field label="Name" error={errors.name?.message}>
+      <Field label={t.form.name} error={errors.name?.message}>
         <Input {...register("name")} autoComplete="name" />
       </Field>
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Email" error={errors.email?.message}>
+        <Field label={t.form.email} error={errors.email?.message}>
           <Input type="email" {...register("email")} autoComplete="email" />
         </Field>
-        <Field label="Phone" error={errors.phone?.message}>
+        <Field label={t.form.phone} error={errors.phone?.message}>
           <Input type="tel" {...register("phone")} autoComplete="tel" />
         </Field>
       </div>
-      <Field label="Notes" error={errors.notes?.message}>
-        <Textarea {...register("notes")} placeholder="Arrival time, preferences, or questions" />
+      <Field label={t.form.notes} error={errors.notes?.message}>
+        <Textarea {...register("notes")} placeholder={t.form.notesPlaceholder} />
       </Field>
       {error ? <p className="text-sm text-clay">{error}</p> : null}
       <div className="flex gap-3">
         <Button type="button" variant="outline" onClick={onBack}>
-          Back
+          {t.form.back}
         </Button>
         <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Sending…" : "Send booking inquiry"}
+          {isSubmitting ? t.form.sending : t.form.sendBooking}
         </Button>
       </div>
     </form>
@@ -322,7 +329,7 @@ function Toggle({
   onChange: (checked: boolean) => void;
 }) {
   return (
-    <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-sage bg-white px-4 py-3">
+    <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-sage bg-surface px-4 py-3">
       <Checkbox checked={checked} onCheckedChange={(value) => onChange(value === true)} />
       <span className="text-sm text-ink">{label}</span>
     </label>
