@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Wifi, Bath, Volume2, ConciergeBell } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { ImageGallery } from "@/components/ImageGallery";
-import { AmbientVideo } from "@/components/AmbientVideo";
+import { FramedVideo } from "@/components/FramedMedia";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -35,12 +35,15 @@ export default function RoomsPage() {
       <PageHero
         title={rooms.pageTitle}
         description={rooms.pageDescription}
-        image={gallery.rooms.standard[0]}
+        image={gallery.hero[3]}
       />
 
       {rooms.types.map((room) => {
         const images = room.slug === "standard" ? gallery.rooms.standard : gallery.rooms.double;
-        const video = room.slug === "double" ? gallery.videos.doubleRoom : gallery.videos.room;
+        const videos =
+          room.slug === "double"
+            ? [gallery.videos.doubleRoom, gallery.videos.doubleRoomAlt]
+            : [gallery.videos.room];
 
         return (
           <section
@@ -55,8 +58,10 @@ export default function RoomsPage() {
               <FadeIn className="mt-8">
                 <ImageGallery images={images} fallbackLabel={room.title} />
               </FadeIn>
-              <FadeIn className="mt-6 overflow-hidden rounded-2xl">
-                <AmbientVideo video={video} className="h-72 w-full object-cover" />
+              <FadeIn className="mt-6 grid gap-4 sm:grid-cols-2">
+                {videos.map((video) => (
+                  <FramedVideo key={video.src} video={video} className="h-[32rem]" />
+                ))}
               </FadeIn>
               <div className="mt-8 flex flex-wrap gap-2">
                 {rooms.amenities.map((amenity) => {

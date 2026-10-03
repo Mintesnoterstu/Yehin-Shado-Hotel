@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
 import { gallery } from "@/data/gallery";
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -53,20 +55,29 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {site.nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "group text-sm",
-                scrolled ? "text-moss hover:text-forest" : "text-ivory/85 hover:text-ivory",
-              )}
-            >
-              {item.label}
-              <span className="block h-px max-w-0 bg-sand transition-all duration-300 group-hover:max-w-full" />
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex" aria-label="Primary">
+          {site.nav.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  "group text-sm",
+                  scrolled ? "text-moss hover:text-forest" : "text-ivory/85 hover:text-ivory",
+                  active && (scrolled ? "text-forest" : "text-ivory"),
+                )}
+              >
+                {item.label}
+                <span
+                  className={cn(
+                    "block h-px bg-sand transition-all duration-300",
+                    active ? "max-w-full" : "max-w-0 group-hover:max-w-full",
+                  )}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-5 lg:flex">

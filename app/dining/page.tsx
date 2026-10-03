@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { ImageGallery } from "@/components/ImageGallery";
-import { AmbientVideo } from "@/components/AmbientVideo";
+import { FramedImage, FramedVideo } from "@/components/FramedMedia";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -27,7 +26,7 @@ export default function DiningPage() {
       <PageHero
         title={dining.pageTitle}
         description={dining.pageDescription}
-        image={gallery.hero[1]}
+        image={gallery.hero[3]}
       />
 
       <section className="bg-ivory py-20 lg:py-24">
@@ -38,11 +37,8 @@ export default function DiningPage() {
               description={dining.restaurant.description}
             />
           </FadeIn>
-          <FadeIn className="mt-10">
-            <ImageGallery images={gallery.dining.restaurant} fallbackLabel="Restaurant" />
-          </FadeIn>
-          <FadeIn className="mt-6 overflow-hidden rounded-2xl">
-            <AmbientVideo video={gallery.videos.dining} className="h-80 w-full object-cover" />
+          <FadeIn className="mt-10 mx-auto max-w-md">
+            <FramedVideo video={gallery.videos.dining} className="h-[32rem]" />
           </FadeIn>
           <div className="mt-10">
             <Button asChild>
@@ -62,8 +58,15 @@ export default function DiningPage() {
               description={dining.bar.description}
             />
           </FadeIn>
-          <FadeIn className="mt-10">
-            <ImageGallery images={gallery.dining.bar} fallbackLabel="Bar & Lounge" />
+          <FadeIn className="mt-10 grid gap-4 sm:grid-cols-2">
+            {gallery.spa.moroccan.slice(0, 2).map((image) => (
+              <FramedImage
+                key={image.src}
+                src={image.src}
+                alt={image.alt}
+                className="h-[28rem] border border-white/10"
+              />
+            ))}
           </FadeIn>
           <div className="mt-10">
             <Button asChild variant="secondary">

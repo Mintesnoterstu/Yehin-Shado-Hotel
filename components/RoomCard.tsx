@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { GalleryImage } from "@/data/gallery";
+import { FramedImage } from "@/components/FramedMedia";
 import { cn } from "@/lib/utils";
 
 type RoomCardProps = {
@@ -15,19 +15,9 @@ type RoomCardProps = {
 export function RoomCard({ title, description, href, image }: RoomCardProps) {
   return (
     <article className="group overflow-hidden rounded-2xl border border-sage bg-white shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md">
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-forest to-forest-dark">
-        {image ? (
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
-          />
-        ) : (
-          <p className="absolute bottom-4 left-4 font-serif text-xl text-ivory">{title}</p>
-        )}
-      </div>
+      {image ? (
+        <FramedImage src={image.src} alt={image.alt} className="h-[22rem] rounded-none sm:h-[26rem]" />
+      ) : null}
       <div className="space-y-3 p-6">
         <h3 className="text-ink">{title}</h3>
         <p className="text-moss">{description}</p>

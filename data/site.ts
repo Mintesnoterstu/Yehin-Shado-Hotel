@@ -30,11 +30,12 @@ export const site = {
   social: {
     tiktok: {
       label: "TikTok",
-      href: "https://www.tiktok.com/",
-      placeholder: true,
+      href: "https://www.tiktok.com/@yehin.shado.hotel",
+      placeholder: false,
     },
   },
   nav: [
+    { href: "/", label: "Home" },
     { href: "/rooms", label: "Rooms" },
     { href: "/spa", label: "Spa" },
     { href: "/dining", label: "Dining" },

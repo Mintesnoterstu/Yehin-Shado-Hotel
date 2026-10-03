@@ -26,7 +26,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact"
         description="Write to us for rooms, spa sessions, or a table — we confirm by phone or email."
-        image={gallery.hero[2]}
+        image={gallery.hero[3]}
       />
 
       <section className="bg-ivory py-20 lg:py-24">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ImageGallery } from "@/components/ImageGallery";
-import { AmbientVideo } from "@/components/AmbientVideo";
+import { FramedVideo } from "@/components/FramedMedia";
 import { SpaCard } from "@/components/SpaCard";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -28,7 +28,7 @@ export default function SpaPage() {
       <PageHero
         title={spa.pageTitle}
         description={spa.pageDescription}
-        image={gallery.spa.moroccan[0]}
+        image={gallery.hero[3]}
       />
 
       <section className="bg-forest-light py-20 lg:py-24">
@@ -81,8 +81,8 @@ export default function SpaPage() {
               </article>
             ))}
           </div>
-          <FadeIn className="mt-8 overflow-hidden rounded-2xl">
-            <AmbientVideo video={gallery.videos.sauna} className="h-72 w-full object-cover" />
+          <FadeIn className="mt-8 mx-auto max-w-md">
+            <FramedVideo video={gallery.videos.sauna} className="h-[32rem]" />
           </FadeIn>
         </div>
       </section>

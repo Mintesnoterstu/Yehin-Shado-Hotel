@@ -56,7 +56,6 @@ export function Footer() {
             target="_blank"
           >
             TikTok
-            {site.social.tiktok.placeholder ? " (placeholder)" : ""}
           </a>
         </div>
       </div>

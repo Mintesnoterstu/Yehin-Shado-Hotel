@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { gallery } from "@/data/gallery";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
+import { FramedImage } from "@/components/FramedMedia";
 
 export function AboutSnippet() {
-  const image = gallery.hero[3] ?? gallery.hero[0];
+  const image = gallery.hero[0] ?? gallery.hero[3];
 
   return (
     <section className="bg-ivory py-20 lg:py-28">
@@ -23,15 +23,7 @@ export function AboutSnippet() {
         </FadeIn>
         <FadeIn delay={0.1}>
           {image ? (
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-sage">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+            <FramedImage src={image.src} alt={image.alt} className="h-[32rem] border border-sage" />
           ) : null}
         </FadeIn>
       </div>
