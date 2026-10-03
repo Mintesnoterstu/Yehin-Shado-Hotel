@@ -13,6 +13,7 @@ type FramedImageProps = {
   className?: string;
 };
 
+/** Still photos use a landscape frame — 9:16 is reserved for video. */
 export function FramedImage({ src, alt, priority, sizes, className }: FramedImageProps) {
   return (
     <figure className={cn("relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-sage", className)}>
@@ -22,7 +23,7 @@ export function FramedImage({ src, alt, priority, sizes, className }: FramedImag
         fill
         priority={priority}
         sizes={sizes ?? "(max-width: 768px) 100vw, 50vw"}
-        className="object-cover"
+        className="object-contain"
       />
     </figure>
   );

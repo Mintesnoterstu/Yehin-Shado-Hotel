@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/data/site";
-import { gallery } from "@/data/gallery";
 import { LegalModal } from "@/components/LegalModal";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -21,15 +19,8 @@ export function Footer() {
     <footer className="bg-forest-dark text-ivory/80">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="space-y-4">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src={gallery.brand.logo.src}
-              alt={gallery.brand.logo.alt}
-              width={36}
-              height={36}
-              className="rounded-full"
-            />
-            <span className="font-serif text-xl text-ivory">{t.name}</span>
+          <Link href="/" className="font-serif text-xl text-ivory">
+            {t.name}
           </Link>
           <p className="text-sm text-ivory/70">{t.description}</p>
         </div>
@@ -49,7 +40,7 @@ export function Footer() {
 
         <div>
           <p className="mb-4 text-xs uppercase tracking-[0.2em] text-sand">{t.footer.contact}</p>
-            <address className="not-italic text-sm leading-relaxed">{t.location.addressLine}</address>
+          <address className="not-italic text-sm leading-relaxed">{t.location.addressLine}</address>
           <a href={`tel:${site.phoneE164}`} className="mt-3 block text-sm hover:text-sand">
             {site.phoneDisplay}
           </a>
