@@ -15,7 +15,7 @@ type FramedImageProps = {
 
 export function FramedImage({ src, alt, priority, sizes, className }: FramedImageProps) {
   return (
-    <figure className={cn("relative aspect-[4/3] overflow-hidden rounded-2xl bg-sage", className)}>
+    <figure className={cn("relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-sage", className)}>
       <Image
         src={src}
         alt={alt}
@@ -39,8 +39,8 @@ export function FramedVideo({ video, title, className }: FramedVideoProps) {
   const label = title ?? video.title;
 
   return (
-    <div className={cn("mx-auto w-full max-w-[18rem]", className)}>
-      <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-forest-dark ring-1 ring-white/10">
+    <div className={cn("mx-auto w-full max-w-[17.5rem]", className)}>
+      <div className="relative aspect-[9/16] overflow-hidden rounded-[1.85rem] bg-forest-dark shadow-lg ring-1 ring-white/15">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           poster={video.poster}

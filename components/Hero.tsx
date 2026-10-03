@@ -14,9 +14,15 @@ export function Hero() {
   const { t } = useLanguage();
   const { theme } = useTheme();
   const day = theme === "light";
+  const night = theme === "dark";
 
   return (
-    <section className={cn("relative overflow-hidden", day ? "bg-canvas" : "bg-forest-dark")}>
+    <section
+      className={cn(
+        "relative overflow-hidden",
+        day ? "bg-canvas" : night ? "bg-forest-dark" : "bg-forest",
+      )}
+    >
       <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl items-center gap-10 px-5 pb-16 pt-28 lg:grid-cols-2 lg:px-8 lg:pb-20">
         <div>
           <h1 className={cn("max-w-3xl drop-shadow-sm", day ? "text-forest-fg" : "text-ivory")}>{t.tagline}</h1>

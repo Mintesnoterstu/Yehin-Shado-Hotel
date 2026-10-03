@@ -32,6 +32,7 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
       >
         <button
           type="button"
+          aria-pressed={locale === "en"}
           className={cn(
             "rounded-full px-2.5 py-1",
             locale === "en" ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
@@ -42,6 +43,7 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
         </button>
         <button
           type="button"
+          aria-pressed={locale === "am"}
           className={cn(
             "rounded-full px-2.5 py-1",
             locale === "am" ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
@@ -67,14 +69,16 @@ export function PrefsControls({ inverted = false }: PrefsProps) {
           <button
             type="button"
             key={name}
+            title={label}
+            aria-pressed={theme === name}
             className={cn(
-              "inline-flex items-center gap-1 rounded-full px-2.5 py-1",
+              "inline-flex items-center gap-1 rounded-full px-2 py-1",
               theme === name ? "bg-forest text-ivory" : inverted ? "text-ivory/80" : "text-moss hover:text-forest-fg",
             )}
             onClick={() => setTheme(name)}
           >
             <Icon className="h-3.5 w-3.5" aria-hidden />
-            {label}
+            <span>{label}</span>
           </button>
         ))}
       </div>

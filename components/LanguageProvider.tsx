@@ -27,8 +27,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    document.documentElement.lang = locale === "am" ? "am" : "en";
-    document.documentElement.classList.toggle("locale-am", locale === "am");
+    const root = document.documentElement;
+    root.lang = locale === "am" ? "am" : "en";
+    root.dir = "ltr";
+    root.classList.toggle("locale-am", locale === "am");
     window.localStorage.setItem(STORAGE_KEY, locale);
   }, [locale]);
 

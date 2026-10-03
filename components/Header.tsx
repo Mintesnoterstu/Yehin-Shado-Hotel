@@ -21,6 +21,8 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const solid = scrolled || open;
   const inverted = !solid && theme !== "light";
+  const linkClass = inverted ? "text-ivory/85 hover:text-ivory" : "text-moss hover:text-forest-fg";
+  const activeClass = inverted ? "text-ivory" : "text-forest-fg";
 
   const nav = [
     { href: "/", label: t.nav.home },
@@ -48,7 +50,7 @@ export function Header() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-colors duration-300",
-        solid ? "bg-canvas/95 backdrop-blur-md shadow-sm" : "bg-transparent",
+        solid ? "bg-canvas/95 shadow-sm backdrop-blur-md" : "bg-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 lg:h-[4.25rem] lg:px-8">
@@ -58,13 +60,13 @@ export function Header() {
             alt={gallery.brand.logo.alt}
             width={40}
             height={40}
-            className="h-10 w-10 shrink-0 rounded-full ring-1 ring-ivory/30"
+            className="h-10 w-10 shrink-0 rounded-full bg-ivory object-cover ring-1 ring-sage"
             priority
           />
           <span
             className={cn(
               "truncate font-serif text-lg tracking-[-0.02em] sm:text-xl",
-              solid ? "text-forest-fg" : "text-ivory",
+              inverted ? "text-ivory" : "text-forest-fg",
             )}
           >
             {t.name}
@@ -78,11 +80,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={cn(
-                  "group text-sm",
-                  solid ? "text-moss hover:text-forest-fg" : "text-ivory/85 hover:text-ivory",
-                  active && (solid ? "text-forest-fg" : "text-ivory"),
-                )}
+                className={cn("group text-sm", linkClass, active && activeClass)}
               >
                 {item.label}
                 <span
@@ -96,15 +94,9 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden min-w-0 items-center gap-3 lg:flex">
           <PrefsControls inverted={inverted} />
-          <a
-            href={`tel:${site.phoneE164}`}
-            className={cn(
-              "hidden text-sm xl:inline",
-              solid ? "text-moss hover:text-forest-fg" : "text-ivory/80 hover:text-ivory",
-            )}
-          >
+          <a href={`tel:${site.phoneE164}`} className={cn("hidden text-sm 2xl:inline", linkClass)}>
             {site.phoneDisplay}
           </a>
           <Button asChild size="sm">
@@ -114,7 +106,7 @@ export function Header() {
 
         <button
           type="button"
-          className={cn("lg:hidden", solid ? "text-forest-fg" : "text-ivory")}
+          className={cn("lg:hidden", inverted ? "text-ivory" : "text-forest-fg")}
           aria-expanded={open}
           aria-label={open ? t.actions.closeMenu : t.actions.openMenu}
           onClick={() => setOpen((value) => !value)}

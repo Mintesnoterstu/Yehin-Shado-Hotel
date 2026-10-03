@@ -134,7 +134,6 @@ export const gallery = {
     },
     dining: {
       src: "/videos/yihen-shado/dining-celebration.mp4",
-      poster: "/images/yihen-shado/hero/wordmark-facade.jpeg",
       title: "A celebration hosted at Yehin Shado Hotel",
     },
   },

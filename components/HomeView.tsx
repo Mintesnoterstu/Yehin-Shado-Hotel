@@ -10,6 +10,7 @@ import { Testimonial } from "@/components/Testimonial";
 import { LocationStrip } from "@/components/LocationStrip";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionHeading } from "@/components/SectionHeading";
+import { ImageGallery } from "@/components/ImageGallery";
 import { gallery } from "@/data/gallery";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -72,6 +73,17 @@ export function HomeView() {
       </section>
 
       <DiningPreview />
+
+      <section className="bg-canvas py-20 lg:py-28">
+        <div className="mx-auto max-w-6xl px-5 lg:px-8">
+          <FadeIn>
+            <SectionHeading eyebrow={t.home.aboutEyebrow} title={t.home.insideTitle} />
+          </FadeIn>
+          <FadeIn className="mt-12">
+            <ImageGallery images={gallery.hero.slice(1)} fallbackLabel={t.home.insideTitle} />
+          </FadeIn>
+        </div>
+      </section>
 
       <section className="bg-forest-light py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-5 lg:px-8">

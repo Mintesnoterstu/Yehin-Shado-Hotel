@@ -66,6 +66,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-cormorant)", "serif"],
         sans: ["var(--font-inter)", "sans-serif"],
+        ethiopic: ["var(--font-ethiopic)", "var(--font-inter)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
