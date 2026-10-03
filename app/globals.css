@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 41% 97%;
+    --foreground: 148 25% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 148 25% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 148 25% 10%;
+    --primary: 147 31% 18%;
+    --primary-foreground: 40 41% 97%;
+    --secondary: 140 20% 92%;
+    --secondary-foreground: 147 31% 18%;
+    --muted: 140 16% 93%;
+    --muted-foreground: 148 8% 51%;
+    --accent: 33 43% 63%;
+    --accent-foreground: 148 25% 10%;
+    --destructive: 6 49% 44%;
+    --destructive-foreground: 40 41% 97%;
+    --border: 135 13% 88%;
+    --input: 135 13% 88%;
+    --ring: 147 31% 18%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ivory text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif tracking-[-0.02em] text-ink;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    line-height: 1.3;
+  }
+
+  p {
+    @apply text-base leading-[1.7] text-moss md:text-[1.125rem];
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-forest ring-offset-2 ring-offset-ivory;
+  }
+}
+
+@layer utilities {
+  .map-muted {
+    filter: grayscale(0.35) saturate(0.7) hue-rotate(70deg) contrast(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
