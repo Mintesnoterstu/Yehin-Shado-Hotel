@@ -5,7 +5,8 @@ export const copy = {
   en: {
     name: "Yehin Shado Hotel",
     tagline: "A Quiet Retreat in Jemo",
-    description: "A boutique hotel and Moroccan-inspired wellness spa in Addis Ababa.",
+    description:
+      "A boutique hotel and Moroccan-inspired wellness spa in Addis Ababa.",
     nav: {
       home: "Home",
       rooms: "Rooms",
@@ -47,9 +48,11 @@ export const copy = {
         "The property sits next to Saba Building, inside Sisters Cafe Building: a residential corner of the city, close to Bole, far from spectacle.",
       stayEyebrow: "Stay",
       stayTitle: "Rooms for quiet nights",
-      stayDescription: "Two considered layouts — nothing excess, everything needed for rest.",
+      stayDescription:
+        "Two considered layouts — nothing excess, everything needed for rest.",
       spaEyebrow: "Spa",
-      spaDescription: "Moroccan-inspired suites, professional massage, steam, and Finnish sauna.",
+      spaDescription:
+        "Moroccan-inspired suites, professional massage, steam, and Finnish sauna.",
       exploreSpaLink: "Explore the spa →",
       diningEyebrow: "Dining",
       diningTitle: "Table, bar, and coffee",
@@ -57,7 +60,8 @@ export const copy = {
         "Ethiopian hospitality in two rooms — the restaurant for a proper meal, the lounge for juices, smoothies, and traditional coffee after the spa.",
       voicesEyebrow: "Guest voices",
       voicesTitle: "Notes from a quiet stay",
-      voicesDescription: "Placeholder quotes until approved guest testimonials are provided.",
+      voicesDescription:
+        "Placeholder quotes until approved guest testimonials are provided.",
       locationTitle: "A quiet corner of Addis Ababa",
       insideTitle: "A look inside",
       guestRated: "Guest Rated",
@@ -77,7 +81,8 @@ export const copy = {
     },
     rooms: {
       pageTitle: "Rooms",
-      pageDescription: "Quiet bedrooms in Jemo 1 — tailored for rest after travel, work, or time in the spa.",
+      pageDescription:
+        "Quiet bedrooms in Jemo 1 — tailored for rest after travel, work, or time in the spa.",
       environmentEyebrow: "In-room environment",
       environmentTitle: "Designed for rest",
       environment:
@@ -89,11 +94,13 @@ export const copy = {
         service: "Room service",
       },
       standardTitle: "Standard Bedroom",
-      standardPreview: "A calm, minimalist room for solo travelers, business guests, or couples.",
+      standardPreview:
+        "A calm, minimalist room for solo travelers, business guests, or couples.",
       standardDescription:
         "Tailored for solo travelers, business guests, or couples. Comfort, privacy, and minimalist layout.",
       doubleTitle: "Double Bedroom",
-      doublePreview: "A more spacious layout for families or guests who prefer extra room.",
+      doublePreview:
+        "A more spacious layout for families or guests who prefer extra room.",
       doubleDescription:
         "Larger variants with twin or larger bedding — ideal for families or guests wanting extra space.",
     },
@@ -104,26 +111,69 @@ export const copy = {
       heading: "Rituals for Deep Rest",
       postSpaNote: "Post-spa refreshments available at our bar & lounge.",
       massageHeading: "Professional Massages",
-      massageIntro: "Inquiry only — we will confirm the therapist and time when you write to us.",
+      massageIntro:
+        "Inquiry only — we will confirm the therapist and time when you write to us.",
       thermalHeading: "Thermal Facilities",
-      thermalIntro: "Steam and Finnish sauna for detoxification and muscle rest.",
+      thermalIntro:
+        "Steam and Finnish sauna for detoxification and muscle rest.",
       features: [
-        { title: "Moroccan-Style Spa Suites", description: "Private rooms for traditional bath rituals, exfoliation, and wraps.", icon: "bath" },
-        { title: "Professional Massages", description: "Deep tissue, Swedish, and targeted therapeutic work.", icon: "hand" },
-        { title: "Steam Room", description: "Warm steam to ease the body before or after treatment.", icon: "cloud" },
-        { title: "Finnish Sauna", description: "Dry heat and wood, for muscle release and quiet heat.", icon: "flame" },
+        {
+          title: "Moroccan-Style Spa Suites",
+          description:
+            "Private rooms for traditional bath rituals, exfoliation, and wraps.",
+          icon: "bath",
+        },
+        {
+          title: "Professional Massages",
+          description: "Deep tissue, Swedish, and targeted therapeutic work.",
+          icon: "hand",
+        },
+        {
+          title: "Steam Room",
+          description: "Warm steam to ease the body before or after treatment.",
+          icon: "cloud",
+        },
+        {
+          title: "Finnish Sauna",
+          description: "Dry heat and wood, for muscle release and quiet heat.",
+          icon: "flame",
+        },
       ],
       moroccanTitle: "Moroccan-Style Spa Suites",
       moroccanDescription:
         "Traditional Moroccan bath rituals, targeted exfoliation, and body wraps — paced slowly, in private suites.",
       massages: [
-        { title: "Deep Tissue", description: "Steady pressure for tightness held in the back, shoulders, and legs.", icon: "waves" },
-        { title: "Swedish", description: "Long, flowing strokes for circulation and an unhurried calm.", icon: "flower" },
-        { title: "Targeted Therapeutic", description: "Focused work on a specific area, guided by how you arrive.", icon: "heartPulse" },
+        {
+          title: "Deep Tissue",
+          description:
+            "Steady pressure for tightness held in the back, shoulders, and legs.",
+          icon: "waves",
+        },
+        {
+          title: "Swedish",
+          description:
+            "Long, flowing strokes for circulation and an unhurried calm.",
+          icon: "flower",
+        },
+        {
+          title: "Targeted Therapeutic",
+          description:
+            "Focused work on a specific area, guided by how you arrive.",
+          icon: "heartPulse",
+        },
       ],
       thermal: [
-        { slug: "steam", title: "Steam Room", description: "Moist heat to support detoxification and a softer muscle tone." },
-        { slug: "sauna", title: "Finnish Sauna", description: "Classic dry sauna heat for deep muscle relaxation." },
+        {
+          slug: "steam",
+          title: "Steam Room",
+          description:
+            "Moist heat to support detoxification and a softer muscle tone.",
+        },
+        {
+          slug: "sauna",
+          title: "Finnish Sauna",
+          description: "Classic dry sauna heat for deep muscle relaxation.",
+        },
       ],
     },
     dining: {
@@ -140,7 +190,8 @@ export const copy = {
     },
     contact: {
       pageTitle: "Contact",
-      pageDescription: "Write to us for rooms, spa sessions, or a table — we confirm by phone or email.",
+      pageDescription:
+        "Write to us for rooms, spa sessions, or a table — we confirm by phone or email.",
       inquiry: "General Inquiry",
       booking: "Book a Stay",
       findUs: "Find us",
@@ -160,7 +211,8 @@ export const copy = {
       sending: "Sending…",
       messageReceived: "Message received",
       thankYou: "Thank you. Our team will reply as soon as we can.",
-      sendFail: "We could not send your message just now. Please call or use WhatsApp.",
+      sendFail:
+        "We could not send your message just now. Please call or use WhatsApp.",
       checkIn: "Check-in",
       checkOut: "Check-out",
       guests: "Guests",
@@ -181,7 +233,8 @@ export const copy = {
       inquirySent: "Inquiry sent",
       bookingThanks:
         "We have received your stay request. Our team will confirm availability by email or phone.",
-      bookingFail: "We could not send this inquiry. Please call or message us on WhatsApp.",
+      bookingFail:
+        "We could not send this inquiry. Please call or message us on WhatsApp.",
       steps: "Booking steps",
       current: "current",
       errors: {
@@ -249,7 +302,8 @@ export const copy = {
     ],
     system: {
       emptyRoom: "This room is empty",
-      emptyBody: "The page you asked for is not part of the hotel. Return to the foyer.",
+      emptyBody:
+        "The page you asked for is not part of the hotel. Return to the foyer.",
       backHome: "Back home",
       quietError: "Something went quiet",
       tryAgainBody: "We could not load this page. Please try again.",
@@ -258,7 +312,7 @@ export const copy = {
     },
   },
   am: {
-    name: "የሂን ሻዶ ሆቴል",
+    name: "የህን ሻዶ ሆቴል",
     tagline: "በጀሞ የተረጋጋ መጠለያ",
     description: "በአዲስ አበባ የሚገኝ ቡቲክ ሆቴል እና በሞሮኮ ተመስጦ የተዘጋጀ የጤና ስፓ።",
     nav: {
@@ -279,7 +333,7 @@ export const copy = {
       reserveTable: "ጠረጴዛ ይያዙ",
       contactBooking: "ግንኙነት እና ቦታ ማስያዝ",
       whatsapp: "ዋትስአፕ",
-      whatsappAria: "የሂን ሻዶ ሆቴልን በዋትስአፕ ያግኙ",
+      whatsappAria: "የህን ሻዶ ሆቴልን በዋትስአፕ ያግኙ",
       openMenu: "ምናሌ ክፈት",
       closeMenu: "ምናሌ ዝጋ",
       close: "ዝጋ",
@@ -297,7 +351,7 @@ export const copy = {
       aboutEyebrow: "ስለ እኛ",
       aboutTitle: "መጀመሪያ ጤና፣ ከዚያ ሆቴል",
       aboutP1:
-        "የሂን ሻዶ ሆቴል በጀሞ 1፣ አዲስ አበባ የሚገኝ ቡቲክ መኖሪያ እና በሞሮኮ ተመስጦ የተዘጋጀ ስፓ ነው። እንግዶች ለግል ጸጥታ፣ ለሙቀት እረፍት እና ለረጋ መስመር ይመጣሉ — ከዚያም በኢትዮጵያዊ እንግዳ ተቀባይነት፣ በተረጋጉ ክፍሎች እና ከሳውና በኋላ ለሚገባው ባር ይቆያሉ።",
+        "የህን ሻዶ ሆቴል በጀሞ 1፣ አዲስ አበባ የሚገኝ ቡቲክ መኖሪያ እና በሞሮኮ ተመስጦ የተዘጋጀ ስፓ ነው። እንግዶች ለግል ጸጥታ፣ ለሙቀት እረፍት እና ለረጋ መስመር ይመጣሉ — ከዚያም በኢትዮጵያዊ እንግዳ ተቀባይነት፣ በተረጋጉ ክፍሎች እና ከሳውና በኋላ ለሚገባው ባር ይቆያሉ።",
       aboutP2:
         "ሆቴሉ ከሳባ ሕንፃ አጠገብ፣ በሲስተርስ ካፌ ሕንፃ ውስጥ ይገኛል፤ ከቦሌ ቅርብ የሆነ ጸጥ ያለ የከተማ ማዕዘን።",
       stayEyebrow: "መኖሪያ",
@@ -322,8 +376,7 @@ export const copy = {
       neighborhoodNote:
         "በጀሞ 1 ማዕከል — ከሳባ ሕንፃ አጠገብ፣ በሲስተርስ ካፌ ሕንፃ ውስጥ። የአዲስ አበባ ጸጥ ያለ ማዕዘን፣ ከቦሌ ዓለም አቀፍ አውሮፕላን ማረፊያ በደቂቃዎች።",
       airportNote: "ከቦሌ ዓለም አቀፍ አውሮፕላን ማረፊያ በደቂቃዎች።",
-      addressLine:
-        "ጀሞ 1፣ ከሳባ ሕንፃ አጠገብ፣ በሲስተርስ ካፌ ሕንፃ ውስጥ፣ አዲስ አበባ 1000፣ ኢትዮጵያ",
+      addressLine: "ጀሞ 1፣ ከሳባ ሕንፃ አጠገብ፣ በሲስተርስ ካፌ ሕንፃ ውስጥ፣ አዲስ አበባ 1000፣ ኢትዮጵያ",
       hoursNote: "[PLACEHOLDER — በተረጋገጡ ሰዓቶች ይተካ]",
       receptionHours: "ሁልጊዜ ክፍት",
       spaHours: "በየቀኑ፣ 9:00 – 21:00",
@@ -345,14 +398,17 @@ export const copy = {
       },
       standardTitle: "መደበኛ መኝታ ክፍል",
       standardPreview: "ለብቻ ተጓዦች፣ የንግድ እንግዶች ወይም ጥንዶች የተረጋጋ፣ ቀላል ክፍል።",
-      standardDescription: "ለብቻ ተጓዦች፣ የንግድ እንግዶች ወይም ጥንዶች። ምቾት፣ ግላዊነት እና ቀላል አቀማመጥ።",
+      standardDescription:
+        "ለብቻ ተጓዦች፣ የንግድ እንግዶች ወይም ጥንዶች። ምቾት፣ ግላዊነት እና ቀላል አቀማመጥ።",
       doubleTitle: "ድርብ መኝታ ክፍል",
       doublePreview: "ለቤተሰብ ወይም ተጨማሪ ቦታ ለሚፈልጉ እንግዶች ሰፊ አቀማመጥ።",
-      doubleDescription: "ትልልቅ አማራጮች ከሁለት ወይም ከትልቅ አልጋ ጋር — ለቤተሰብ ወይም ለተጨማሪ ቦታ።",
+      doubleDescription:
+        "ትልልቅ አማራጮች ከሁለት ወይም ከትልቅ አልጋ ጋር — ለቤተሰብ ወይም ለተጨማሪ ቦታ።",
     },
     spa: {
       pageTitle: "ስፓ እና ጤና",
-      pageDescription: "በአዲስ አበባ በሞሮኮ ተመስጦ የተዘጋጁ ሥርዓቶች፣ ሙያዊ ማሳጅ፣ ስቲም እና የፊንላንድ ሳውና።",
+      pageDescription:
+        "በአዲስ አበባ በሞሮኮ ተመስጦ የተዘጋጁ ሥርዓቶች፣ ሙያዊ ማሳጅ፣ ስቲም እና የፊንላንድ ሳውና።",
       heading: "ለጥልቅ እረፍት ሥርዓቶች",
       postSpaNote: "ከስፓ በኋላ ማደስ በባር እና ላውንጅ ይገኛል።",
       massageHeading: "ሙያዊ ማሳጅ",
@@ -360,21 +416,58 @@ export const copy = {
       thermalHeading: "የሙቀት መገልገያዎች",
       thermalIntro: "ለመርዝ ማስወገድ እና ለጡንቻ እረፍት ስቲም እና የፊንላንድ ሳውና።",
       features: [
-        { title: "የሞሮኮ ስፓ ስዊቶች", description: "ለባህላዊ መታጠቢያ፣ ማበጠር እና መጠቅለል የግል ክፍሎች።", icon: "bath" },
-        { title: "ሙያዊ ማሳጅ", description: "ጥልቅ ቲሹ፣ ስዊድሽ እና የታለመ ሕክምና።", icon: "hand" },
-        { title: "ስቲም ክፍል", description: "ከሕክምና በፊት ወይም በኋላ ሰውነትን የሚያለሰልስ ሙቀት።", icon: "cloud" },
-        { title: "የፊንላንድ ሳውና", description: "ደረቅ ሙቀት እና እንጨት፣ ለጡንቻ መፍታት።", icon: "flame" },
+        {
+          title: "የሞሮኮ ስፓ ስዊቶች",
+          description: "ለባህላዊ መታጠቢያ፣ ማበጠር እና መጠቅለል የግል ክፍሎች።",
+          icon: "bath",
+        },
+        {
+          title: "ሙያዊ ማሳጅ",
+          description: "ጥልቅ ቲሹ፣ ስዊድሽ እና የታለመ ሕክምና።",
+          icon: "hand",
+        },
+        {
+          title: "ስቲም ክፍል",
+          description: "ከሕክምና በፊት ወይም በኋላ ሰውነትን የሚያለሰልስ ሙቀት።",
+          icon: "cloud",
+        },
+        {
+          title: "የፊንላንድ ሳውና",
+          description: "ደረቅ ሙቀት እና እንጨት፣ ለጡንቻ መፍታት።",
+          icon: "flame",
+        },
       ],
       moroccanTitle: "የሞሮኮ ስፓ ስዊቶች",
-      moroccanDescription: "ባህላዊ የሞሮኮ መታጠቢያ ሥርዓቶች፣ የታለመ ማበጠር እና የሰውነት መጠቅለል — በግል ስዊቶች፣ በዝግታ።",
+      moroccanDescription:
+        "ባህላዊ የሞሮኮ መታጠቢያ ሥርዓቶች፣ የታለመ ማበጠር እና የሰውነት መጠቅለል — በግል ስዊቶች፣ በዝግታ።",
       massages: [
-        { title: "ጥልቅ ቲሹ", description: "በጀርባ፣ ትከሻ እና እግር ላይ ለተያዘ ጥብቅነት የተረጋጋ ጫና።", icon: "waves" },
-        { title: "ስዊድሽ", description: "ለደም ዝውውር እና ለረጋ ሰላም ረጅም፣ የሚፈስ እንቅስቃሴ።", icon: "flower" },
-        { title: "የታለመ ሕክምና", description: "በመጣችሁበት ሁኔታ መሠረት በአንድ ክፍል ላይ ያተኮረ ሥራ።", icon: "heartPulse" },
+        {
+          title: "ጥልቅ ቲሹ",
+          description: "በጀርባ፣ ትከሻ እና እግር ላይ ለተያዘ ጥብቅነት የተረጋጋ ጫና።",
+          icon: "waves",
+        },
+        {
+          title: "ስዊድሽ",
+          description: "ለደም ዝውውር እና ለረጋ ሰላም ረጅም፣ የሚፈስ እንቅስቃሴ።",
+          icon: "flower",
+        },
+        {
+          title: "የታለመ ሕክምና",
+          description: "በመጣችሁበት ሁኔታ መሠረት በአንድ ክፍል ላይ ያተኮረ ሥራ።",
+          icon: "heartPulse",
+        },
       ],
       thermal: [
-        { slug: "steam", title: "ስቲም ክፍል", description: "ለመርዝ ማስወገድ እና ለለስላሳ ጡንቻ እርጥብ ሙቀት።" },
-        { slug: "sauna", title: "የፊንላንድ ሳውና", description: "ለጥልቅ የጡንቻ እረፍት ክላሲክ ደረቅ ሳውና።" },
+        {
+          slug: "steam",
+          title: "ስቲም ክፍል",
+          description: "ለመርዝ ማስወገድ እና ለለስላሳ ጡንቻ እርጥብ ሙቀት።",
+        },
+        {
+          slug: "sauna",
+          title: "የፊንላንድ ሳውና",
+          description: "ለጥልቅ የጡንቻ እረፍት ክላሲክ ደረቅ ሳውና።",
+        },
       ],
     },
     dining: {
@@ -452,7 +545,7 @@ export const copy = {
       doubleRoom: "ውብ ድርብ መኝታ ክፍል",
       doubleRoomAlt: "የድርብ መኝታ ክፍል ሁለተኛ እይታ",
       sauna: "እንግዳ በሳውና ላይ",
-      dining: "በየሂን ሻዶ ሆቴል የተደረገ በዓል",
+      dining: "በየህን ሻዶ ሆቴል የተደረገ በዓል",
     },
     footer: {
       visit: "ጎብኙ",
@@ -467,7 +560,7 @@ export const copy = {
       termsTitle: "የአገልግሎት ውሎች",
       updated: "[PLACEHOLDER — በህጋዊ ግምገማ ይተካ]",
       privacy: [
-        "[PLACEHOLDER — በህጋዊ ግምገማ ይተካ] የሂን ሻዶ ሆቴል በጥያቄ እና በቦታ ማስያዝ ቅጾች የሚያጋሩትን መረጃ ብቻ ይሰበስባል።",
+        "[PLACEHOLDER — በህጋዊ ግምገማ ይተካ] የህን ሻዶ ሆቴል በጥያቄ እና በቦታ ማስያዝ ቅጾች የሚያጋሩትን መረጃ ብቻ ይሰበስባል።",
         "[PLACEHOLDER — በህጋዊ ግምገማ ይተካ] ይህን መረጃ ለመመለስ፣ መኖርን ለማረጋገጥ እና ስለ ቆይታዎ ለመነጋገር እንጠቀማለን። የግል መረጃ አንሸጥም።",
         "[PLACEHOLDER — በህጋዊ ግምገማ ይተካ] ቅጾች በኢሜይል ወደ ቦታ ማስያዝ ቡድናችን ይደርሳሉ። መረጃ ማዘመን ወይም ማስወገድ ከፈለጉ ያግኙን።",
       ],
@@ -479,17 +572,20 @@ export const copy = {
     },
     testimonials: [
       {
-        quote: "[PLACEHOLDER] ከረጅም መድረስ በኋላ ጸጥ ያለ ክፍል — በማግስቱ ስፓው የመጣንበት ምክንያት ሆነ።",
+        quote:
+          "[PLACEHOLDER] ከረጅም መድረስ በኋላ ጸጥ ያለ ክፍል — በማግስቱ ስፓው የመጣንበት ምክንያት ሆነ።",
         name: "[PLACEHOLDER ስም]",
         context: "እንግዳ",
       },
       {
-        quote: "[PLACEHOLDER] የሃማም ሥርዓቱ እና የፊንላንድ ሳውና በከተማው ካሳለፍናቸው ሰዓታት በጣም የረጉ ነበሩ።",
+        quote:
+          "[PLACEHOLDER] የሃማም ሥርዓቱ እና የፊንላንድ ሳውና በከተማው ካሳለፍናቸው ሰዓታት በጣም የረጉ ነበሩ።",
         name: "[PLACEHOLDER ስም]",
         context: "የጤና ጎብኚ",
       },
       {
-        quote: "[PLACEHOLDER] ቁርስ ሳይቸኩል ነበር፣ ቡናው እንደሚገባው ነበር፣ ሠራተኞቹ ድምፃቸውን ከፍ አላደረጉም።",
+        quote:
+          "[PLACEHOLDER] ቁርስ ሳይቸኩል ነበር፣ ቡናው እንደሚገባው ነበር፣ ሠራተኞቹ ድምፃቸውን ከፍ አላደረጉም።",
         name: "[PLACEHOLDER ስም]",
         context: "የምሽት ቆይታ",
       },
