@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Cormorant_Garamond, Inter, Noto_Sans_Ethiopic } from "next/font/google";
+import { Cormorant_Garamond, Outfit, Noto_Sans_Ethiopic } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -16,10 +16,10 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       data-theme="default"
-      className={`${cormorant.variable} ${inter.variable} ${notoEthiopic.variable}`}
+      className={`${cormorant.variable} ${outfit.variable} ${notoEthiopic.variable}`}
       suppressHydrationWarning
     >
       <head>

@@ -11,17 +11,15 @@ export function AboutSnippet() {
   const image = gallery.hero[0] ?? gallery.hero[3];
 
   return (
-    <section className="bg-canvas py-20 lg:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2 lg:px-8">
+    <section className="bg-canvas py-24 lg:py-32">
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 lg:grid-cols-2 lg:px-10">
         <FadeIn>
           <SectionHeading eyebrow={t.home.aboutEyebrow} title={t.home.aboutTitle} />
-          <p className="mt-6">{t.home.aboutP1}</p>
-          <p className="mt-4">{t.home.aboutP2}</p>
+          <p className="mt-8">{t.home.aboutP1}</p>
+          <p className="mt-5">{t.home.aboutP2}</p>
         </FadeIn>
-        <FadeIn delay={0.1}>
-          {image ? (
-            <FramedImage src={image.src} alt={image.alt} className="border border-sage" />
-          ) : null}
+        <FadeIn delay={0.08}>
+          {image ? <FramedImage src={image.src} alt={image.alt} /> : null}
         </FadeIn>
       </div>
     </section>

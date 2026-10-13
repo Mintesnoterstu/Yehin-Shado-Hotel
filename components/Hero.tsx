@@ -19,12 +19,7 @@ export function Hero() {
   const heroImage = gallery.hero[3] ?? gallery.hero[0];
 
   return (
-    <section
-      className={cn(
-        "surface-dark relative overflow-hidden",
-        day ? "bg-canvas" : night ? "bg-forest-dark" : "bg-forest-soft",
-      )}
-    >
+    <section className="surface-dark relative min-h-[100svh] overflow-hidden bg-forest-soft">
       {heroImage ? (
         <Image
           src={heroImage.src}
@@ -32,40 +27,39 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-[center_30%]"
         />
       ) : null}
       <div
         className={cn(
           "absolute inset-0",
           day
-            ? "bg-gradient-to-r from-canvas/90 via-canvas/70 to-canvas/40"
+            ? "bg-gradient-to-t from-canvas via-canvas/55 to-canvas/20"
             : night
-              ? "bg-gradient-to-r from-forest-dark/90 via-forest-dark/75 to-forest-dark/50"
-              : "bg-gradient-to-r from-forest-soft/88 via-forest-soft/70 to-forest-soft/45",
+              ? "bg-gradient-to-t from-forest-dark via-forest-dark/70 to-black/30"
+              : "bg-gradient-to-t from-forest-soft via-forest-soft/55 to-forest-soft/20",
         )}
       />
 
-      <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-6xl items-center gap-10 px-5 pb-16 pt-28 lg:grid-cols-2 lg:px-8 lg:pb-20">
-        <div>
-          <h1 className={cn("max-w-3xl drop-shadow-sm", day ? "text-forest-fg" : "text-ivory")}>
-            {t.tagline}
-          </h1>
-          <p className={cn("mt-5 max-w-xl text-lg", day ? "text-moss" : "text-ivory/90")}>
-            {t.description}
+      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end gap-10 px-5 pb-16 pt-28 lg:flex-row lg:items-end lg:justify-between lg:px-10 lg:pb-20">
+        <div className="max-w-2xl">
+          <p className={cn("mb-5 text-xs uppercase tracking-[0.28em]", day ? "text-forest-fg" : "text-sand")}>
+            Jemo 1 · Addis Ababa
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild>
+          <h1 className={cn("max-w-3xl", day ? "text-ink" : "text-ivory")}>{t.tagline}</h1>
+          <p className={cn("mt-6 max-w-lg text-lg", day ? "text-moss" : "text-ivory/90")}>{t.description}</p>
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <Button asChild size="lg">
               <Link href="/contact?tab=booking">{t.actions.bookRoom}</Link>
             </Button>
-            <Button asChild variant={day ? "outline" : "secondary"}>
+            <Button asChild variant={day ? "outline" : "secondary"} size="lg">
               <Link href="/spa">{t.actions.exploreSpa}</Link>
             </Button>
           </div>
           <div
             className={cn(
-              "mt-10 inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-sm backdrop-blur-sm",
-              day ? "border-sage bg-surface text-forest-fg" : "border-sand/40 bg-forest/40 text-sand",
+              "mt-8 inline-flex items-center gap-2 text-sm",
+              day ? "text-forest-fg" : "text-sand",
             )}
           >
             <Star className="h-4 w-4 fill-sand text-sand" aria-hidden />
@@ -74,7 +68,7 @@ export function Hero() {
             </span>
           </div>
         </div>
-        <FramedVideo video={gallery.videos.hero} title={t.videos.hero} />
+        <FramedVideo video={gallery.videos.hero} title={t.videos.hero} className="max-w-[13.5rem] shrink-0" />
       </div>
     </section>
   );

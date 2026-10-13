@@ -19,9 +19,12 @@ export function Header() {
   const { t } = useLanguage();
   const { theme } = useTheme();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const isHome = pathname === "/";
   const light = theme === "light";
-  const night = theme === "dark";
-  const onDark = !light;
+  const overHero = isHome && !scrolled && !open && !light;
+  const solidLight = light || (isHome && scrolled) || (!isHome && light);
+  const darkChrome = !light && (overHero || !isHome || scrolled || open);
 
   const nav = [
     { href: "/", label: t.nav.home },
@@ -30,6 +33,13 @@ export function Header() {
     { href: "/dining", label: t.nav.dining },
     { href: "/contact", label: t.nav.contact },
   ];
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -41,51 +51,57 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-40 border-b",
-        light
-          ? "border-sage bg-canvas text-forest-fg"
-          : night
-            ? "surface-dark border-white/10 bg-forest-dark text-ivory"
-            : "surface-dark border-white/10 bg-forest text-ivory",
+        "fixed inset-x-0 top-0 z-40 transition-all duration-300",
+        overHero
+          ? "border-transparent bg-transparent text-ivory"
+          : light
+            ? "border-b border-sage/80 bg-canvas/90 text-ink backdrop-blur-md"
+            : "border-b border-white/10 bg-forest-dark/95 text-ivory backdrop-blur-md",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 lg:h-[4.25rem] lg:px-8">
+      <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-3 px-5 lg:px-10">
         <Link
           href="/"
-          className={cn(
-            "flex min-w-0 shrink-0 items-center gap-2.5 font-serif text-lg tracking-[-0.02em] sm:text-xl",
-            light ? "text-forest-fg" : "text-ivory",
-          )}
+          className="flex min-w-0 items-center gap-3"
           onClick={() => setOpen(false)}
         >
           <Image
             src={gallery.brand.logo.src}
             alt={gallery.brand.logo.alt}
-            width={40}
-            height={40}
-            className="h-10 w-10 shrink-0 rounded-full object-cover"
+            width={42}
+            height={42}
+            className="h-[42px] w-[42px] shrink-0 rounded-full object-cover ring-1 ring-white/20"
             priority
           />
-          <span className="truncate">{t.name}</span>
+          <span
+            className={cn(
+              "truncate font-serif text-[1.15rem] tracking-[-0.02em] sm:text-xl",
+              light && !overHero ? "text-ink" : "text-ivory",
+              light && (scrolled || !isHome) && "text-ink",
+            )}
+          >
+            {t.name}
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {nav.map((item) => {
             const active = pathname === item.href;
+            const muted = overHero || darkChrome;
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "group text-sm",
-                  onDark ? "text-ivory/85 hover:text-ivory" : "text-moss hover:text-forest-fg",
-                  active && (onDark ? "text-ivory" : "text-forest-fg"),
+                  "group text-[0.8rem] font-medium uppercase tracking-[0.16em]",
+                  muted ? "text-ivory/80 hover:text-ivory" : "text-moss hover:text-ink",
+                  active && (muted ? "text-ivory" : "text-ink"),
                 )}
               >
                 {item.label}
                 <span
                   className={cn(
-                    "block h-px bg-sand transition-all duration-300",
+                    "mt-1 block h-px bg-sand transition-all duration-300",
                     active ? "max-w-full" : "max-w-0 group-hover:max-w-full",
                   )}
                 />
@@ -99,11 +115,14 @@ export function Header() {
           <ThemeToggle />
           <a
             href={`tel:${site.phoneE164}`}
-            className={cn("ml-1 hidden text-sm 2xl:inline", onDark ? "text-ivory/80" : "text-moss")}
+            className={cn(
+              "ml-2 hidden text-sm xl:inline",
+              overHero || darkChrome ? "text-ivory/80" : "text-moss",
+            )}
           >
             {site.phoneDisplay}
           </a>
-          <Button asChild size="sm" className="ml-1">
+          <Button asChild size="sm" className="ml-2">
             <Link href="/contact?tab=booking">{t.actions.bookNow}</Link>
           </Button>
         </div>
@@ -113,7 +132,7 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className={light ? "text-forest-fg" : "text-ivory"}
+            className={solidLight && !overHero && light ? "text-ink" : "text-ivory"}
             aria-expanded={open}
             aria-label={open ? t.actions.closeMenu : t.actions.openMenu}
             onClick={() => setOpen((value) => !value)}
@@ -126,25 +145,25 @@ export function Header() {
       {open ? (
         <div
           className={cn(
-            "border-t px-5 py-6 lg:hidden",
-            light ? "border-sage bg-canvas" : night ? "border-white/10 bg-forest-dark" : "border-white/10 bg-forest",
+            "border-t px-5 py-8 lg:hidden",
+            light ? "border-sage bg-canvas text-ink" : "border-white/10 bg-forest-dark text-ivory",
           )}
         >
-          <nav className="flex flex-col gap-4" aria-label="Mobile">
+          <nav className="flex flex-col gap-5" aria-label="Mobile">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={cn("font-serif text-2xl", light ? "text-forest-fg" : "text-ivory")}
+                className="font-serif text-3xl"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <a href={`tel:${site.phoneE164}`} className={light ? "text-moss" : "text-ivory/80"}>
+            <a href={`tel:${site.phoneE164}`} className="text-moss">
               {site.phoneDisplay}
             </a>
-            <Button asChild className="w-full">
+            <Button asChild className="mt-2 w-full">
               <Link href="/contact?tab=booking" onClick={() => setOpen(false)}>
                 {t.actions.bookNow}
               </Link>

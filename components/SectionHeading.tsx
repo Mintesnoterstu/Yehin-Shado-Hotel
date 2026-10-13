@@ -18,20 +18,27 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div className={cn(align === "center" && "text-center mx-auto max-w-2xl", className)}>
+    <div className={cn(align === "center" && "mx-auto max-w-2xl text-center", className)}>
       {eyebrow ? (
         <p
           className={cn(
-            "mb-3 text-xs font-medium uppercase tracking-[0.2em]",
+            "mb-4 text-[0.7rem] font-medium uppercase tracking-[0.28em]",
             invert ? "text-sand" : "text-sand",
           )}
         >
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={invert ? "text-ivory" : "text-forest-fg"}>{title}</h2>
+      <div className={cn("hairline mb-5", align === "center" && "mx-auto")} />
+      <h2 className={invert ? "text-ivory" : "text-ink"}>{title}</h2>
       {description ? (
-        <p className={cn("mt-4 max-w-2xl", invert ? "text-ivory/80" : "text-moss", align === "center" && "mx-auto")}>
+        <p
+          className={cn(
+            "mt-5 max-w-xl",
+            invert ? "text-ivory/80" : "text-moss",
+            align === "center" && "mx-auto",
+          )}
+        >
           {description}
         </p>
       ) : null}

@@ -22,14 +22,14 @@ export function SpaCard({ title, description, icon }: SpaCardProps) {
   const Icon = icons[icon] ?? Bath;
 
   return (
-    <article className="rounded-2xl border border-sage bg-surface p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-forest hover:shadow-md">
-      <Icon className="h-6 w-6 text-forest-fg" aria-hidden />
-      <h3 className="mt-4 text-ink">{title}</h3>
-      <p className="mt-2 text-sm text-moss">{description}</p>
+    <article className="border-t border-sage pt-6">
+      <Icon className="h-5 w-5 text-sand" aria-hidden />
+      <h3 className="mt-5 text-ink">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-moss">{description}</p>
     </article>
   );
 }
 
 export function SpaCardGrid({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={cn("grid gap-5 sm:grid-cols-2 lg:grid-cols-4", className)}>{children}</div>;
+  return <div className={cn("grid gap-8 sm:grid-cols-2 lg:grid-cols-4", className)}>{children}</div>;
 }

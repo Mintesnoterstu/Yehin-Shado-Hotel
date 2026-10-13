@@ -5,93 +5,93 @@
 @layer base {
   :root,
   [data-theme="default"] {
-    --background: 40 41% 97%;
-    --foreground: 148 25% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 148 25% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 148 25% 10%;
-    --primary: 147 31% 18%;
-    --primary-foreground: 40 41% 97%;
-    --secondary: 140 20% 92%;
-    --secondary-foreground: 147 31% 18%;
-    --muted: 140 16% 93%;
-    --muted-foreground: 148 8% 51%;
-    --accent: 33 43% 63%;
-    --accent-foreground: 148 25% 10%;
+    --background: 36 33% 94%;
+    --foreground: 36 12% 10%;
+    --card: 36 40% 99%;
+    --card-foreground: 36 12% 10%;
+    --popover: 36 40% 99%;
+    --popover-foreground: 36 12% 10%;
+    --primary: 154 38% 14%;
+    --primary-foreground: 36 33% 95%;
+    --secondary: 36 24% 92%;
+    --secondary-foreground: 154 38% 14%;
+    --muted: 36 20% 92%;
+    --muted-foreground: 32 8% 42%;
+    --accent: 34 40% 62%;
+    --accent-foreground: 36 12% 10%;
     --destructive: 6 49% 44%;
-    --destructive-foreground: 40 41% 97%;
-    --border: 135 13% 88%;
-    --input: 135 13% 88%;
-    --ring: 147 31% 18%;
-    --radius: 0.75rem;
-    --color-canvas: #faf8f3;
-    --color-surface: #ffffff;
-    --color-ivory: #faf8f3;
-    --color-ink: #14211a;
-    --color-moss: #4a5a50;
-    --color-fog: #7a8a80;
-    --color-sage: #dce4de;
-    --color-forest: #1f3b2c;
-    --color-forest-dark: #172e22;
-    --color-forest-soft: #2c4a3a;
-    --color-forest-light: #e8efe9;
-    --color-forest-fg: #1f3b2c;
-    --color-sand: #c9a57a;
-    --color-sand-light: #efe2ce;
+    --destructive-foreground: 36 33% 95%;
+    --border: 34 18% 86%;
+    --input: 34 18% 86%;
+    --ring: 154 38% 14%;
+    --radius: 0.5rem;
+    --color-canvas: #f3eee6;
+    --color-surface: #fffcf8;
+    --color-ivory: #f7f3ec;
+    --color-ink: #17150f;
+    --color-moss: #5a564c;
+    --color-fog: #8a847a;
+    --color-sage: #e5ddd1;
+    --color-forest: #143528;
+    --color-forest-dark: #0d231c;
+    --color-forest-soft: #1c3f32;
+    --color-forest-light: #ece6db;
+    --color-forest-fg: #143528;
+    --color-sand: #c4a574;
+    --color-sand-light: #ead9bc;
     --color-olive: #3f6b4a;
     --color-clay: #a94438;
   }
 
   [data-theme="light"] {
     --background: 0 0% 100%;
-    --foreground: 148 28% 10%;
+    --foreground: 154 20% 10%;
     --card: 0 0% 100%;
-    --muted: 140 18% 97%;
-    --color-canvas: #ffffff;
-    --color-surface: #f4f7f5;
+    --muted: 40 20% 97%;
+    --color-canvas: #fbfaf7;
+    --color-surface: #ffffff;
     --color-ivory: #ffffff;
-    --color-ink: #122018;
-    --color-moss: #33443c;
-    --color-fog: #5f7168;
-    --color-sage: #dde8e1;
-    --color-forest: #1a4a32;
-    --color-forest-dark: #143826;
-    --color-forest-soft: #3a5e4a;
-    --color-forest-light: #eef5f1;
-    --color-forest-fg: #143826;
-    --color-sand: #c9974f;
-    --color-sand-light: #f8efdc;
+    --color-ink: #141210;
+    --color-moss: #4f4b44;
+    --color-fog: #7a756c;
+    --color-sage: #e8e2d8;
+    --color-forest: #123226;
+    --color-forest-dark: #0c211b;
+    --color-forest-soft: #1a3b2f;
+    --color-forest-light: #f3f0ea;
+    --color-forest-fg: #123226;
+    --color-sand: #b8955e;
+    --color-sand-light: #f3e8d4;
   }
 
   [data-theme="dark"] {
-    --background: 150 18% 8%;
-    --foreground: 40 30% 94%;
-    --card: 150 14% 12%;
-    --card-foreground: 40 30% 94%;
-    --popover: 150 14% 12%;
-    --popover-foreground: 40 30% 94%;
-    --primary: 147 22% 28%;
-    --primary-foreground: 40 30% 94%;
-    --secondary: 150 12% 16%;
-    --secondary-foreground: 40 30% 94%;
-    --muted: 150 12% 16%;
-    --muted-foreground: 140 10% 70%;
-    --border: 150 10% 22%;
-    --input: 150 10% 22%;
-    --ring: 33 43% 63%;
-    --color-canvas: #101612;
-    --color-surface: #18211c;
+    --background: 150 12% 7%;
+    --foreground: 36 28% 93%;
+    --card: 150 10% 11%;
+    --card-foreground: 36 28% 93%;
+    --popover: 150 10% 11%;
+    --popover-foreground: 36 28% 93%;
+    --primary: 154 22% 28%;
+    --primary-foreground: 36 28% 93%;
+    --secondary: 150 10% 14%;
+    --secondary-foreground: 36 28% 93%;
+    --muted: 150 10% 14%;
+    --muted-foreground: 36 12% 70%;
+    --border: 150 8% 18%;
+    --input: 150 8% 18%;
+    --ring: 34 40% 62%;
+    --color-canvas: #0c100e;
+    --color-surface: #141a17;
     --color-ivory: #f4efe6;
-    --color-ink: #f0ebe3;
-    --color-moss: #b7c3bb;
-    --color-fog: #8a9890;
-    --color-sage: #2a3830;
-    --color-forest: #1f3b2c;
-    --color-forest-dark: #0e1612;
-    --color-forest-soft: #1a3328;
-    --color-forest-light: #18241e;
-    --color-forest-fg: #c5ddcc;
+    --color-ink: #f2ebe1;
+    --color-moss: #c2b8aa;
+    --color-fog: #9a9388;
+    --color-sage: #2a332e;
+    --color-forest: #1a3b2f;
+    --color-forest-dark: #070b09;
+    --color-forest-soft: #152820;
+    --color-forest-light: #1a221e;
+    --color-forest-fg: #d5e4db;
     --color-sand: #d4b184;
     --color-sand-light: #3a3226;
     --color-olive: #8fbf9a;
@@ -107,30 +107,32 @@
 
   body {
     @apply bg-canvas text-ink font-sans antialiased;
-    transition: background-color 200ms ease, color 200ms ease;
+    transition: background-color 220ms ease, color 220ms ease;
   }
 
   html.locale-am body {
-    font-family: var(--font-ethiopic), var(--font-inter), sans-serif;
+    font-family: var(--font-ethiopic), var(--font-outfit), sans-serif;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-serif tracking-[-0.02em] text-ink;
+    @apply font-serif font-normal tracking-[-0.03em] text-ink;
   }
 
   .surface-dark h1,
   .surface-dark h2,
   .surface-dark h3,
   .surface-dark h4 {
-    color: #faf8f3;
+    color: #f7f3ec;
   }
 
   .surface-dark p,
-  .surface-dark address {
-    color: rgba(250, 248, 243, 0.88);
+  .surface-dark address,
+  .surface-dark span,
+  .surface-dark a {
+    color: rgba(247, 243, 236, 0.88);
   }
 
   html.locale-am h1,
@@ -141,36 +143,42 @@
   }
 
   h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 1.1;
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    line-height: 1.05;
   }
 
   h2 {
-    font-size: clamp(2rem, 4vw, 3.25rem);
-    line-height: 1.15;
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    line-height: 1.12;
   }
 
   h3 {
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-size: clamp(1.2rem, 1.8vw, 1.65rem);
     line-height: 1.3;
   }
 
   p {
-    @apply text-base leading-[1.7] text-moss md:text-[1.125rem];
+    @apply text-[1.05rem] leading-[1.75] text-moss;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-forest ring-offset-2 ring-offset-canvas;
+    @apply outline-none ring-2 ring-sand ring-offset-2 ring-offset-canvas;
   }
 }
 
 @layer utilities {
   .map-muted {
-    filter: grayscale(0.35) saturate(0.7) hue-rotate(70deg) contrast(0.95);
+    filter: grayscale(0.4) saturate(0.65) hue-rotate(55deg) contrast(0.96);
   }
 
   [data-theme="dark"] .map-muted {
-    filter: grayscale(0.45) saturate(0.55) brightness(0.85) contrast(1.05);
+    filter: grayscale(0.5) saturate(0.5) brightness(0.82) contrast(1.05);
+  }
+
+  .hairline {
+    height: 1px;
+    width: 3rem;
+    background: var(--color-sand);
   }
 }
 

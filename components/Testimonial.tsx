@@ -8,16 +8,16 @@ type TestimonialProps = {
 
 export function Testimonial({ quote, name, context }: TestimonialProps) {
   return (
-    <blockquote className="rounded-2xl border border-sage bg-surface p-6 shadow-sm">
-      <div className="mb-4 flex gap-1" aria-label="5 star rating">
+    <blockquote className="border-t border-sage pt-6">
+      <div className="mb-5 flex gap-1" aria-label="5 star rating">
         {Array.from({ length: 5 }).map((_, index) => (
-          <Star key={index} className="h-4 w-4 fill-sand text-sand" />
+          <Star key={index} className="h-3.5 w-3.5 fill-sand text-sand" />
         ))}
       </div>
-      <p className="text-moss">“{quote}”</p>
-      <footer className="mt-4">
-        <cite className="not-italic font-medium text-ink">{name}</cite>
-        <p className="text-sm text-fog">{context}</p>
+      <p className="font-serif text-xl leading-snug text-ink">“{quote}”</p>
+      <footer className="mt-6">
+        <cite className="not-italic text-sm font-medium uppercase tracking-[0.14em] text-ink">{name}</cite>
+        <p className="mt-1 text-sm text-fog">{context}</p>
       </footer>
     </blockquote>
   );

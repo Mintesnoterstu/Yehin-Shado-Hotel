@@ -19,14 +19,15 @@ export function RoomCard({ title, description, href, image }: RoomCardProps) {
   const { t } = useLanguage();
 
   return (
-    <article className="group overflow-hidden rounded-2xl border border-sage bg-surface shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-md">
-      {image ? (
-        <FramedImage src={image.src} alt={image.alt} className="rounded-none" />
-      ) : null}
-      <div className="space-y-3 p-6">
+    <article className="group overflow-hidden bg-surface">
+      {image ? <FramedImage src={image.src} alt={image.alt} className="aspect-[4/5]" /> : null}
+      <div className="space-y-3 px-1 py-6">
         <h3 className="text-ink">{title}</h3>
         <p className="text-moss">{description}</p>
-        <Link href={href} className="inline-flex items-center gap-2 text-sm text-forest-fg">
+        <Link
+          href={href}
+          className="inline-flex items-center gap-2 text-[0.75rem] font-medium uppercase tracking-[0.16em] text-forest-fg"
+        >
           {t.actions.viewDetails}
           <ArrowRight className="h-4 w-4 text-sand transition-transform group-hover:translate-x-0.5" />
         </Link>
@@ -36,5 +37,5 @@ export function RoomCard({ title, description, href, image }: RoomCardProps) {
 }
 
 export function RoomCardGrid({ className, children }: { className?: string; children: ReactNode }) {
-  return <div className={cn("grid gap-6 md:grid-cols-2", className)}>{children}</div>;
+  return <div className={cn("grid gap-10 md:grid-cols-2", className)}>{children}</div>;
 }

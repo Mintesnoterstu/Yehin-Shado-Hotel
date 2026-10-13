@@ -66,8 +66,8 @@ const config: Config = {
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
-        ethiopic: ["var(--font-ethiopic)", "var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-outfit)", "sans-serif"],
+        ethiopic: ["var(--font-ethiopic)", "var(--font-outfit)", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -75,9 +75,9 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        sm: "0 1px 2px rgba(31, 59, 44, 0.04)",
-        md: "0 4px 12px rgba(31, 59, 44, 0.06)",
-        lg: "0 12px 32px rgba(31, 59, 44, 0.08)",
+        sm: "0 1px 2px rgba(20, 53, 40, 0.05)",
+        md: "0 8px 24px rgba(20, 53, 40, 0.08)",
+        lg: "0 20px 50px rgba(20, 53, 40, 0.12)",
       },
     },
   },
